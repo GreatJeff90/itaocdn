@@ -3,89 +3,141 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ITAOCDN - Akpautong Urua Okok Communities Development Network</title>
+    <title>ITAOCDN - Building Sustainable Communities in Akwa Ibom</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       :root {
         --primary: #8B0000;
         --primary-light: #A52A2A;
         --secondary: #D4AF37;
-        --secondary-light: #FFD700;
-        --accent: #2E8B57;
+        --accent: #0A2472;
+        --light: #F8F9FA;
+        --dark: #121212;
       }
       
       * {
         box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
+      html {
+        scroll-behavior: smooth;
       }
       
       body {
         font-family: 'Inter', sans-serif;
         color: #333;
-        line-height: 1.6;
+        line-height: 1.7;
+        overflow-x: hidden;
+        background-color: #FAFAFA;
       }
       
-      .heading-primary {
-        font-family: 'Merriweather', serif;
-        font-weight: 700;
-        color: var(--primary);
+      .font-display {
+        font-family: 'Space Grotesk', sans-serif;
       }
       
-      .section-padding {
-        padding: 5rem 1.5rem;
+      .section-spacing {
+        padding: 8rem 2rem;
       }
       
-      .container {
-        max-width: 1200px;
+      @media (max-width: 768px) {
+        .section-spacing {
+          padding: 5rem 1.5rem;
+        }
+      }
+      
+      .container-custom {
+        max-width: 1280px;
         margin: 0 auto;
+        padding: 0 2rem;
+      }
+      
+      @media (max-width: 768px) {
+        .container-custom {
+          padding: 0 1.5rem;
+        }
+      }
+      
+      .hero-gradient {
+        background: linear-gradient(135deg, #8B0000 0%, #600000 100%);
       }
       
       .btn-primary {
         background-color: var(--primary);
         color: white;
-        padding: 0.75rem 2rem;
-        border-radius: 4px;
+        padding: 1rem 2.5rem;
+        border-radius: 50px;
         font-weight: 600;
-        transition: all 0.3s;
-        border: none;
-        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        border: 2px solid transparent;
+        font-size: 1.05rem;
+        position: relative;
+        overflow: hidden;
       }
       
       .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(139, 0, 0, 0.2);
         background-color: var(--primary-light);
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(139, 0, 0, 0.2);
+      }
+      
+      .btn-primary:active {
+        transform: translateY(-1px);
       }
       
       .btn-secondary {
-        background-color: var(--secondary);
-        color: #333;
-        padding: 0.75rem 2rem;
-        border-radius: 4px;
+        background-color: transparent;
+        color: var(--primary);
+        padding: 1rem 2.5rem;
+        border-radius: 50px;
         font-weight: 600;
-        transition: all 0.3s;
-        border: none;
-        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        border: 2px solid var(--primary);
+        font-size: 1.05rem;
       }
       
       .btn-secondary:hover {
-        background-color: var(--secondary-light);
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+        background-color: var(--primary);
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(139, 0, 0, 0.15);
       }
       
-      .card {
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      .card-hover {
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border-radius: 16px;
         overflow: hidden;
-        transition: transform 0.3s, box-shadow 0.3s;
+        background: white;
+        border: 1px solid #F0F0F0;
       }
       
-      .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+      .card-hover:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
+        border-color: #E0E0E0;
+      }
+      
+      .gradient-text {
+        background: linear-gradient(135deg, #8B0000 0%, #D4AF37 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      
+      .nav-blur {
+        backdrop-filter: blur(12px);
+        background-color: rgba(255, 255, 255, 0.92);
       }
       
       .nav-link {
@@ -93,10 +145,26 @@
         color: #555;
         font-weight: 500;
         padding: 0.5rem 0;
+        transition: color 0.3s;
       }
       
       .nav-link:hover {
         color: var(--primary);
+      }
+      
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--primary);
+        transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+      
+      .nav-link:hover::after {
+        width: 100%;
       }
       
       .nav-link.active {
@@ -104,385 +172,358 @@
       }
       
       .nav-link.active::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
         width: 100%;
-        height: 2px;
-        background-color: var(--primary);
       }
       
-      .footer {
-        background-color: #2c2c2c;
-        color: #eee;
+      .section-title {
+        font-size: 3.5rem;
+        font-weight: 800;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+        color: var(--dark);
       }
       
-      .footer a {
-        color: #ddd;
-        transition: color 0.3s;
+      @media (max-width: 768px) {
+        .section-title {
+          font-size: 2.5rem;
+        }
       }
       
-      .footer a:hover {
-        color: var(--secondary);
+      .section-subtitle {
+        font-size: 1.25rem;
+        color: #666;
+        max-width: 700px;
+        margin: 0 auto 4rem;
+      }
+      
+      .stat-card {
+        text-align: center;
+        padding: 2.5rem 2rem;
+        border-radius: 20px;
+        background: white;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+        transition: all 0.4s;
+      }
+      
+      .stat-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
       }
       
       .stat-number {
-        font-size: 2.5rem;
-        font-weight: 700;
+        font-size: 3.5rem;
+        font-weight: 800;
         color: var(--primary);
         margin-bottom: 0.5rem;
-      }
-      
-      .stat-label {
-        font-size: 0.9rem;
-        color: #666;
-        text-transform: uppercase;
-        letter-spacing: 1px;
+        line-height: 1;
       }
       
       .program-icon {
-        width: 60px;
-        height: 60px;
-        background-color: rgba(139, 0, 0, 0.1);
-        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        border-radius: 20px;
+        background: linear-gradient(135deg, rgba(139, 0, 0, 0.1) 0%, rgba(212, 175, 55, 0.1) 100%);
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
       }
       
       .program-icon i {
-        font-size: 1.5rem;
+        font-size: 2rem;
         color: var(--primary);
-      }
-      
-      .section-header {
-        text-align: center;
-        margin-bottom: 3rem;
-      }
-      
-      .section-header h2 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-      }
-      
-      .section-header p {
-        max-width: 700px;
-        margin: 0 auto;
-        color: #666;
-      }
-      
-      .divider {
-        height: 4px;
-        width: 80px;
-        background-color: var(--secondary);
-        margin: 0 auto 2rem;
-      }
-      
-      .timeline {
-        position: relative;
-        padding-left: 2rem;
-      }
-      
-      .timeline::before {
-        content: '';
-        position: absolute;
-        left: 7px;
-        top: 0;
-        bottom: 0;
-        width: 2px;
-        background-color: var(--secondary);
       }
       
       .timeline-item {
         position: relative;
-        margin-bottom: 2rem;
+        padding-left: 3rem;
+        margin-bottom: 3rem;
       }
       
       .timeline-item::before {
         content: '';
         position: absolute;
-        left: -2rem;
-        top: 5px;
-        width: 12px;
-        height: 12px;
+        left: 0;
+        top: 0;
+        width: 16px;
+        height: 16px;
         border-radius: 50%;
-        background-color: var(--primary);
-        border: 2px solid white;
-        box-shadow: 0 0 0 3px var(--secondary);
+        background-color: var(--secondary);
+        border: 4px solid white;
+        box-shadow: 0 0 0 2px var(--secondary);
+      }
+      
+      .timeline-item::after {
+        content: '';
+        position: absolute;
+        left: 7px;
+        top: 24px;
+        bottom: -3rem;
+        width: 2px;
+        background-color: #E0E0E0;
+      }
+      
+      .timeline-item:last-child::after {
+        display: none;
       }
       
       .gallery-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+      
+      @media (max-width: 768px) {
+        .gallery-grid {
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+          gap: 1.5rem;
+        }
       }
       
       .gallery-item {
+        border-radius: 16px;
         overflow: hidden;
-        border-radius: 8px;
-        height: 200px;
+        height: 280px;
+        position: relative;
       }
       
       .gallery-item img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.5s;
+        transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       }
       
       .gallery-item:hover img {
-        transform: scale(1.05);
+        transform: scale(1.1);
+      }
+      
+      .gallery-item::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+        opacity: 0;
+        transition: opacity 0.4s;
+      }
+      
+      .gallery-item:hover::after {
+        opacity: 1;
       }
       
       .document-item {
         display: flex;
         align-items: center;
-        padding: 1rem;
-        border: 1px solid #eee;
-        border-radius: 6px;
-        margin-bottom: 1rem;
-        transition: all 0.3s;
+        padding: 2rem;
+        border-radius: 16px;
+        background: white;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+        margin-bottom: 1.5rem;
+        transition: all 0.4s;
       }
       
       .document-item:hover {
-        border-color: var(--primary);
-        background-color: rgba(139, 0, 0, 0.02);
+        transform: translateX(10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
       }
       
       .document-icon {
-        width: 50px;
-        height: 50px;
-        background-color: rgba(139, 0, 0, 0.1);
-        border-radius: 6px;
+        width: 70px;
+        height: 70px;
+        border-radius: 16px;
+        background: linear-gradient(135deg, rgba(139, 0, 0, 0.1) 0%, rgba(212, 175, 55, 0.1) 100%);
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-right: 1rem;
+        margin-right: 2rem;
+        flex-shrink: 0;
       }
       
       .document-icon i {
-        font-size: 1.25rem;
+        font-size: 1.75rem;
         color: var(--primary);
       }
       
-      @media (max-width: 768px) {
-        .section-padding {
-          padding: 3rem 1rem;
-        }
-        
-        .section-header h2 {
-          font-size: 2rem;
-        }
-        
-        .gallery-grid {
-          grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        }
+      .form-input {
+        width: 100%;
+        padding: 1.25rem 1.5rem;
+        border: 2px solid #E0E0E0;
+        border-radius: 12px;
+        font-size: 1rem;
+        transition: all 0.3s;
+        background: white;
+      }
+      
+      .form-input:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.1);
+      }
+      
+      .form-label {
+        display: block;
+        margin-bottom: 0.75rem;
+        font-weight: 600;
+        color: #444;
+      }
+      
+      .floating-animation {
+        animation: float 6s ease-in-out infinite;
+      }
+      
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+      }
+      
+      .pulse-animation {
+        animation: pulse 2s ease-in-out infinite;
+      }
+      
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.7; }
+      }
+      
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s, transform 0.8s;
+      }
+      
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      .bg-pattern {
+        background-image: radial-gradient(circle at 1px 1px, rgba(139, 0, 0, 0.05) 1px, transparent 0);
+        background-size: 40px 40px;
       }
     </style>
   </head>
-  <body class="bg-gray-50">
-    <!-- Header & Navigation -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-      <div class="container">
-        <div class="flex justify-between items-center py-4">
+  <body class="bg-white">
+    <!-- Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 nav-blur shadow-sm">
+      <div class="container-custom">
+        <div class="flex justify-between items-center py-5">
           <!-- Logo -->
-          <div class="flex items-center">
-            <div class="w-12 h-12 bg-[#8B0000] rounded-full flex items-center justify-center mr-3">
-              <span class="text-white font-bold text-lg">ITA</span>
+          <a href="#home" class="flex items-center gap-4">
+            <!-- Logo Image - Replace with actual logo -->
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#8B0000] to-[#600000] flex items-center justify-center shadow-lg">
+              <img src="img/logo.png" alt="ITAOCDN Logo" class="w-10 h-10">
             </div>
             <div>
-              <h1 class="text-xl font-bold text-gray-900">ITAOCDN</h1>
-              <p class="text-xs text-gray-600">Akpautong Urua Okok Communities</p>
+              <h1 class="text-2xl font-bold text-gray-900 font-display">ITAOCDN</h1>
+              <p class="text-xs text-gray-600">Communities Development Network</p>
             </div>
-          </div>
+          </a>
           
           <!-- Desktop Navigation -->
-          <nav class="hidden md:flex space-x-8">
+          <nav class="hidden lg:flex items-center gap-10">
             <a href="#home" class="nav-link active">Home</a>
-            <a href="#about" class="nav-link">About Us</a>
-            <a href="#trustees" class="nav-link">Trustees</a>
+            <a href="#about" class="nav-link">About</a>
             <a href="#programs" class="nav-link">Programs</a>
-            <a href="#news" class="nav-link">News</a>
-            <a href="#gallery" class="nav-link">Gallery</a>
-            <a href="#contact" class="nav-link">Contact</a>
-            <a href="#membership" class="btn-primary">Join Us</a>
+            <a href="#impact" class="nav-link">Impact</a>
+            <a href="#leadership" class="nav-link">Leadership</a>
+            <a href="#resources" class="nav-link">Resources</a>
+            <a href="#contact" class="btn-primary">
+              <i class="fas fa-envelope"></i> Contact Us
+            </a>
           </nav>
           
           <!-- Mobile Menu Button -->
-          <button id="mobile-menu-button" class="md:hidden text-gray-700">
-            <i class="fas fa-bars text-xl"></i>
+          <button id="mobile-menu-button" class="lg:hidden text-gray-700">
+            <i class="fas fa-bars text-2xl"></i>
           </button>
         </div>
         
-        <!-- Mobile Navigation -->
-        <div id="mobile-menu" class="md:hidden hidden bg-white border-t py-4">
-          <div class="flex flex-col space-y-4">
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-white border-t mt-4 py-6 px-4 rounded-xl shadow-xl">
+          <div class="flex flex-col gap-6">
             <a href="#home" class="nav-link active">Home</a>
-            <a href="#about" class="nav-link">About Us</a>
-            <a href="#trustees" class="nav-link">Trustees</a>
+            <a href="#about" class="nav-link">About</a>
             <a href="#programs" class="nav-link">Programs</a>
-            <a href="#news" class="nav-link">News</a>
-            <a href="#gallery" class="nav-link">Gallery</a>
-            <a href="#contact" class="nav-link">Contact</a>
-            <a href="#membership" class="btn-primary w-full text-center">Join Us</a>
+            <a href="#impact" class="nav-link">Impact</a>
+            <a href="#leadership" class="nav-link">Leadership</a>
+            <a href="#resources" class="nav-link">Resources</a>
+            <a href="#contact" class="btn-primary w-full">
+              <i class="fas fa-envelope"></i> Contact Us
+            </a>
           </div>
         </div>
       </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="section-padding bg-gradient-to-r from-gray-50 to-white">
-      <div class="container">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 class="heading-primary text-4xl md:text-5xl mb-6">
-              Building United, Progressive & Self-Sustaining Communities
+    <section id="home" class="section-spacing pt-24 relative overflow-hidden">
+      <div class="container-custom">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="fade-in">
+            <div class="inline-flex items-center gap-3 mb-8 px-4 py-2 bg-gradient-to-r from-[#8B0000]/10 to-[#D4AF37]/10 rounded-full">
+              <span class="w-2 h-2 bg-[#8B0000] rounded-full"></span>
+              <span class="text-sm font-semibold text-[#8B0000]">SINCE 2018</span>
+            </div>
+            
+            <h1 class="section-title font-display">
+              Building <span class="gradient-text">Sustainable</span> Communities in Akwa Ibom
             </h1>
             
-            <div class="mb-8 p-6 bg-white rounded-lg border-l-4 border-[#8B0000] shadow-sm">
-              <p class="italic text-gray-700">
-                "The Incorporated Trustee of Akpautong Urua Okok Communities Development Network exists to institutionalize community aspirations, translate collective intent into structured development action, and ensure that progress remains measurable, transparent, and enduring."
-              </p>
-            </div>
-            
-            <p class="text-gray-700 mb-8">
-              Driving community-led development initiatives that advance social welfare, critical infrastructure, economic empowerment, education, environmental stewardship, and peaceful coexistence across Akpautong–Urua Okok communities in Esit Eket LGA, Akwa Ibom State.
+            <p class="text-xl text-gray-600 mb-10">
+              The Incorporated Trustee of Akpautong Urua Okok Communities Development Network exists to institutionalize community aspirations and translate collective intent into structured development action.
             </p>
             
-            <div class="flex flex-wrap gap-4">
+            <div class="flex flex-wrap gap-4 mb-16">
               <a href="#membership" class="btn-primary">
-                <i class="fas fa-user-plus mr-2"></i> Become a Member
+                <i class="fas fa-user-plus"></i> Join Our Community
               </a>
-              <a href="#partnership" class="btn-secondary">
-                <i class="fas fa-handshake mr-2"></i> Partner with Us
+              <a href="#programs" class="btn-secondary">
+                <i class="fas fa-play-circle"></i> Watch Our Story
               </a>
-              <a href="#volunteer" class="btn-secondary">
-                <i class="fas fa-hands-helping mr-2"></i> Volunteer
-              </a>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-8">
+              <div>
+                <div class="stat-number">500+</div>
+                <div class="text-gray-600 font-medium">Active Members</div>
+              </div>
+              <div>
+                <div class="stat-number">25+</div>
+                <div class="text-gray-600 font-medium">Projects</div>
+              </div>
+              <div>
+                <div class="stat-number">5+</div>
+                <div class="text-gray-600 font-medium">Years</div>
+              </div>
             </div>
           </div>
           
-          <div>
-            <div class="card overflow-hidden">
+          <div class="relative fade-in">
+            <div class="absolute -top-10 -right-10 w-64 h-64 bg-gradient-to-br from-[#D4AF37]/20 to-[#8B0000]/20 rounded-full blur-3xl"></div>
+            <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-gradient-to-br from-[#8B0000]/20 to-[#D4AF37]/20 rounded-full blur-3xl"></div>
+            
+            <div class="card-hover overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" 
                 alt="Community Development"
-                class="w-full h-64 object-cover"
+                class="w-full h-96 object-cover"
               >
-              <div class="p-6">
-                <h3 class="text-xl font-bold mb-4">Our Vision & Mission</h3>
-                <p class="mb-4">
-                  <strong>Vision:</strong> To build a united, progressive, and self-sustaining Akpautong–Urua Okok communities, anchored on inclusive development, transparent leadership, and shared responsibility.
-                </p>
-                <p>
-                  <strong>Mission:</strong> To drive community-led development through structured programs in infrastructure, education, economic empowerment, and environmental stewardship.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Stats Section -->
-        <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div class="text-center">
-            <div class="stat-number">500+</div>
-            <div class="stat-label">Community Members</div>
-          </div>
-          <div class="text-center">
-            <div class="stat-number">25+</div>
-            <div class="stat-label">Completed Projects</div>
-          </div>
-          <div class="text-center">
-            <div class="stat-number">15+</div>
-            <div class="stat-label">Partner Organizations</div>
-          </div>
-          <div class="text-center">
-            <div class="stat-number">5+</div>
-            <div class="stat-label">Years of Service</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Us Section -->
-    <section id="about" class="section-padding bg-white">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="heading-primary">About ITAOCDN</h2>
-          <div class="divider"></div>
-          <p>Learn about our history, legal status, and community development philosophy</p>
-        </div>
-        
-        <div class="grid md:grid-cols-2 gap-12">
-          <div>
-            <h3 class="text-2xl font-bold mb-6">Organizational Profile</h3>
-            
-            <div class="mb-8">
-              <h4 class="text-xl font-semibold mb-4">Legal Status & Mandate</h4>
-              <ul class="space-y-3">
-                <li class="flex items-start">
-                  <i class="fas fa-check text-[#2E8B57] mr-3 mt-1"></i>
-                  <span><strong>Legal Name:</strong> Incorporated Trustee of Akpautong Urua Okok Communities Development Network</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-[#2E8B57] mr-3 mt-1"></i>
-                  <span><strong>CAC Registration:</strong> Incorporated under the Companies and Allied Matters Act (CAMA)</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-[#2E8B57] mr-3 mt-1"></i>
-                  <span><strong>Operational Coverage:</strong> Akpautong–Urua Okok communities in Esit Eket LGA, Akwa Ibom State</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-[#2E8B57] mr-3 mt-1"></i>
-                  <span><strong>Institutional Purpose:</strong> To institutionalize community development through structured, transparent frameworks</span>
-                </li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 class="text-xl font-semibold mb-4">Our Development Approach</h4>
-              <p class="mb-4">
-                ITAOCDN adopts a community-first, participatory approach to development. We believe sustainable progress is achieved when communities are actively involved in identifying needs, designing solutions, and implementing projects.
-              </p>
-              <p>
-                Our framework emphasizes transparency, accountability, inclusivity, and measurable impact across all initiatives.
-              </p>
-            </div>
-          </div>
-          
-          <div>
-            <div class="card h-full">
               <div class="p-8">
-                <h3 class="text-2xl font-bold mb-6">Historical Background</h3>
-                
-                <div class="timeline">
-                  <div class="timeline-item">
-                    <h4 class="font-bold mb-2">2018 - Formation</h4>
-                    <p>Initial community meetings and formation of development committee</p>
+                <div class="flex items-center gap-4 mb-4">
+                  <div class="program-icon">
+                    <i class="fas fa-bullseye"></i>
                   </div>
-                  
-                  <div class="timeline-item">
-                    <h4 class="font-bold mb-2">2019 - Registration</h4>
-                    <p>Incorporation as a Trustee under CAMA with CAC registration</p>
-                  </div>
-                  
-                  <div class="timeline-item">
-                    <h4 class="font-bold mb-2">2020 - First Projects</h4>
-                    <p>Launch of initial community development projects in water and education</p>
-                  </div>
-                  
-                  <div class="timeline-item">
-                    <h4 class="font-bold mb-2">2021-2023 - Expansion</h4>
-                    <p>Growth in membership, partnerships, and project portfolio expansion</p>
-                  </div>
-                  
-                  <div class="timeline-item">
-                    <h4 class="font-bold mb-2">2024-Present - Institutionalization</h4>
-                    <p>Strengthening governance, transparency frameworks, and digital presence</p>
+                  <div>
+                    <h3 class="text-2xl font-bold">Our Vision</h3>
+                    <p class="text-gray-600">United, progressive, and self-sustaining communities</p>
                   </div>
                 </div>
+                <p class="text-gray-700">
+                  To build a united, progressive, and self-sustaining Akpautong–Urua Okok communities, anchored on inclusive development, transparent leadership, and shared responsibility.
+                </p>
               </div>
             </div>
           </div>
@@ -490,716 +531,584 @@
       </div>
     </section>
 
-    <!-- Trustees Section -->
-    <section id="trustees" class="section-padding bg-gray-50">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="heading-primary">Leadership & Governance</h2>
-          <div class="divider"></div>
-          <p>Meet our dedicated Board of Trustees, Management Committee, and Caucus General Assembly</p>
-        </div>
-        
-        <div class="mb-12">
-          <h3 class="text-2xl font-bold mb-6 text-center">Governance Architecture</h3>
-          <div class="bg-white p-8 rounded-lg shadow-sm">
-            <div class="grid md:grid-cols-3 gap-8 text-center">
-              <div>
-                <div class="program-icon mx-auto">
-                  <i class="fas fa-user-tie"></i>
-                </div>
-                <h4 class="text-xl font-bold mb-2">Board of Trustees</h4>
-                <p class="text-gray-700">Provides strategic oversight and ensures adherence to legal and ethical standards</p>
-              </div>
-              
-              <div>
-                <div class="program-icon mx-auto">
-                  <i class="fas fa-tasks"></i>
-                </div>
-                <h4 class="text-xl font-bold mb-2">Management Committee</h4>
-                <p class="text-gray-700">Oversees day-to-day operations and project implementation</p>
-              </div>
-              
-              <div>
-                <div class="program-icon mx-auto">
-                  <i class="fas fa-users"></i>
-                </div>
-                <h4 class="text-xl font-bold mb-2">Caucus General Assembly</h4>
-                <p class="text-gray-700">Representative body of community members for decision-making</p>
-              </div>
-            </div>
+    <!-- Mission Statement -->
+    <section class="py-20 bg-gradient-to-r from-[#8B0000] to-[#600000] relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-0 left-0 w-64 h-64 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-64 h-64 bg-white rounded-full translate-x-1/2 translate-y-1/2"></div>
+      </div>
+      
+      <div class="container-custom relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="inline-flex items-center gap-3 mb-8 px-4 py-2 bg-white/20 rounded-full backdrop-blur-sm">
+            <i class="fas fa-quote-left text-white"></i>
+            <span class="text-white font-semibold">OUR MANDATE</span>
           </div>
+          
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-10 font-display">
+            "To institutionalize community aspirations, translate collective intent into structured development action, and ensure that progress remains measurable, transparent, and enduring."
+          </h2>
+          
+          <p class="text-xl text-white/90">
+            — Incorporated Trustee of Akpautong Urua Okok Communities Development Network
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-spacing bg-pattern">
+      <div class="container-custom">
+        <div class="text-center mb-20">
+          <h2 class="section-title">About <span class="gradient-text">ITAOCDN</span></h2>
+          <p class="section-subtitle">Learn about our history, legal framework, and community development philosophy</p>
         </div>
         
-        <div>
-          <h3 class="text-2xl font-bold mb-8 text-center">Board of Trustees</h3>
-          <div class="grid md:grid-cols-3 gap-8">
-            <!-- Trustee 1 -->
-            <div class="card">
-              <div class="p-6">
-                <div class="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
-                  <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Trustee" class="w-full h-full object-cover">
-                </div>
-                <h4 class="text-xl font-bold text-center mb-2">Chief (Dr.) Uduak J. Akpan</h4>
-                <p class="text-gray-600 text-center mb-4">Chairman, Board of Trustees</p>
-                <p class="text-gray-700 text-sm">
-                  Community leader with over 20 years of experience in community development and public service. Former Local Government Chairman.
-                </p>
-              </div>
-            </div>
+        <div class="grid lg:grid-cols-2 gap-16 mb-20">
+          <div class="fade-in">
+            <h3 class="text-3xl font-bold mb-8">Our Story</h3>
             
-            <!-- Trustee 2 -->
-            <div class="card">
-              <div class="p-6">
-                <div class="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
-                  <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Trustee" class="w-full h-full object-cover">
+            <div class="space-y-8">
+              <div class="timeline-item">
+                <div class="bg-white p-6 rounded-2xl shadow-sm">
+                  <div class="text-sm text-[#8B0000] font-semibold mb-2">2018</div>
+                  <h4 class="text-xl font-bold mb-3">Community Formation</h4>
+                  <p class="text-gray-600">Initial community meetings and formation of development committee to address pressing community needs.</p>
                 </div>
-                <h4 class="text-xl font-bold text-center mb-2">Prof. Iniobong E. Williams</h4>
-                <p class="text-gray-600 text-center mb-4">Vice Chairman</p>
-                <p class="text-gray-700 text-sm">
-                  Academic and development expert specializing in community-based approaches to sustainable development.
-                </p>
               </div>
-            </div>
-            
-            <!-- Trustee 3 -->
-            <div class="card">
-              <div class="p-6">
-                <div class="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
-                  <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Trustee" class="w-full h-full object-cover">
+              
+              <div class="timeline-item">
+                <div class="bg-white p-6 rounded-2xl shadow-sm">
+                  <div class="text-sm text-[#8B0000] font-semibold mb-2">2019</div>
+                  <h4 class="text-xl font-bold mb-3">Legal Registration</h4>
+                  <p class="text-gray-600">Incorporation as a Trustee under CAMA with CAC registration, establishing our legal framework.</p>
                 </div>
-                <h4 class="text-xl font-bold text-center mb-2">Mrs. Grace E. Okon</h4>
-                <p class="text-gray-600 text-center mb-4">Secretary</p>
-                <p class="text-gray-700 text-sm">
-                  Legal practitioner and advocate for women's empowerment with extensive experience in nonprofit governance.
-                </p>
+              </div>
+              
+              <div class="timeline-item">
+                <div class="bg-white p-6 rounded-2xl shadow-sm">
+                  <div class="text-sm text-[#8B0000] font-semibold mb-2">2020-Present</div>
+                  <h4 class="text-xl font-bold mb-3">Growth & Expansion</h4>
+                  <p class="text-gray-600">Implementation of multiple community projects, partnership development, and membership growth across communities.</p>
+                </div>
               </div>
             </div>
           </div>
           
-          <div class="text-center mt-8">
-            <a href="#" class="btn-primary">
-              <i class="fas fa-users mr-2"></i> View Full Leadership Team
-            </a>
+          <div class="fade-in">
+            <div class="card-hover h-full">
+              <div class="p-10">
+                <h3 class="text-3xl font-bold mb-8">Legal & Operational Framework</h3>
+                
+                <div class="space-y-8">
+                  <div class="flex items-start gap-6">
+                    <div class="program-icon flex-shrink-0">
+                      <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-bold mb-3">Legal Status</h4>
+                      <p class="text-gray-600">Incorporated Trustee registered under the Companies and Allied Matters Act (CAMA) of Nigeria.</p>
+                    </div>
+                  </div>
+                  
+                  <div class="flex items-start gap-6">
+                    <div class="program-icon flex-shrink-0">
+                      <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-bold mb-3">Operational Coverage</h4>
+                      <p class="text-gray-600">Akpautong–Urua Okok communities in Esit Eket Local Government Area, Akwa Ibom State.</p>
+                    </div>
+                  </div>
+                  
+                  <div class="flex items-start gap-6">
+                    <div class="program-icon flex-shrink-0">
+                      <i class="fas fa-users"></i>
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-bold mb-3">Governance Structure</h4>
+                      <p class="text-gray-600">Board of Trustees, Management Committee, and Caucus General Assembly ensuring transparent decision-making.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Programs Section -->
-    <section id="programs" class="section-padding bg-white">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="heading-primary">Our Programs & Activities</h2>
-          <div class="divider"></div>
-          <p>Structured development initiatives across key community needs areas</p>
+    <section id="programs" class="section-spacing bg-white">
+      <div class="container-custom">
+        <div class="text-center mb-20">
+          <h2 class="section-title">Our <span class="gradient-text">Development</span> Programs</h2>
+          <p class="section-subtitle">Structured initiatives addressing key community needs across multiple sectors</p>
         </div>
         
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           <!-- Program 1 -->
-          <div class="card">
-            <div class="p-6">
+          <div class="card-hover fade-in">
+            <div class="p-8 h-full">
               <div class="program-icon">
                 <i class="fas fa-tools"></i>
               </div>
-              <h3 class="text-xl font-bold mb-4">Community Infrastructure</h3>
-              <p class="text-gray-700 mb-4">
-                Development of essential community infrastructure including roads, community halls, and public facilities.
-              </p>
-              <ul class="space-y-2 mb-6">
-                <li class="flex items-start">
-                  <i class="fas fa-check text-[#2E8B57] mr-2 mt-1"></i>
-                  <span>Road rehabilitation and construction</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-[#2E8B57] mr-2 mt-1"></i>
-                  <span>Community hall construction and renovation</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-[#2E8B57] mr-2 mt-1"></i>
-                  <span>Public lighting and security infrastructure</span>
-                </li>
-              </ul>
+              <h3 class="text-2xl font-bold mb-4">Community Infrastructure</h3>
+              <p class="text-gray-600 mb-6">Development of essential community infrastructure including roads, community halls, and public facilities.</p>
+              <a href="#" class="inline-flex items-center text-[#8B0000] font-semibold">
+                Learn More <i class="fas fa-arrow-right ml-2"></i>
+              </a>
             </div>
           </div>
           
           <!-- Program 2 -->
-          <div class="card">
-            <div class="p-6">
+          <div class="card-hover fade-in">
+            <div class="p-8 h-full">
               <div class="program-icon">
                 <i class="fas fa-tint"></i>
               </div>
-              <h3 class="text-xl font-bold mb-4">Water, Sanitation & Energy</h3>
-              <p class="text-gray-700 mb-4">
-                Ensuring access to clean water, sanitation facilities, and sustainable energy solutions.
-              </p>
-              <ul class="space-y-2 mb-6">
-                <li class="flex items-start">
-                  <i class="fas fa-check text-[#2E8B57] mr-2 mt-1"></i>
-                  <span>Borehole drilling and water treatment</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-[#2E8B57] mr-2 mt-1"></i>
-                  <span>Public toilet and sanitation facilities</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-[#2E8B57] mr-2 mt-1"></i>
-                  <span>Solar energy and renewable energy projects</span>
-                </li>
-              </ul>
+              <h3 class="text-2xl font-bold mb-4">Water & Sanitation</h3>
+              <p class="text-gray-600 mb-6">Ensuring access to clean water and sanitation facilities through boreholes and water treatment systems.</p>
+              <a href="#" class="inline-flex items-center text-[#8B0000] font-semibold">
+                Learn More <i class="fas fa-arrow-right ml-2"></i>
+              </a>
             </div>
           </div>
           
           <!-- Program 3 -->
-          <div class="card">
-            <div class="p-6">
+          <div class="card-hover fade-in">
+            <div class="p-8 h-full">
               <div class="program-icon">
                 <i class="fas fa-user-graduate"></i>
               </div>
-              <h3 class="text-xl font-bold mb-4">Education & Training</h3>
-              <p class="text-gray-700 mb-4">
-                Promoting educational access, quality, and skills development for community members.
-              </p>
-              <ul class="space-y-2 mb-6">
-                <li class="flex items-start">
-                  <i class="fas fa-check text-[#2E8B57] mr-2 mt-1"></i>
-                  <span>Scholarships and educational support</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-[#2E8B57] mr-2 mt-1"></i>
-                  <span>Vocational skills training programs</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-[#2E8B57] mr-2 mt-1"></i>
-                  <span>Adult literacy and digital skills programs</span>
-                </li>
-              </ul>
+              <h3 class="text-2xl font-bold mb-4">Education & Training</h3>
+              <p class="text-gray-600 mb-6">Promoting educational access and skills development through scholarships and vocational training.</p>
+              <a href="#" class="inline-flex items-center text-[#8B0000] font-semibold">
+                Learn More <i class="fas fa-arrow-right ml-2"></i>
+              </a>
             </div>
           </div>
           
           <!-- Program 4 -->
-          <div class="card">
-            <div class="p-6">
+          <div class="card-hover fade-in">
+            <div class="p-8 h-full">
               <div class="program-icon">
                 <i class="fas fa-briefcase"></i>
               </div>
-              <h3 class="text-xl font-bold mb-4">Economic Empowerment</h3>
-              <p class="text-gray-700 mb-4">
-                Creating sustainable livelihoods and economic opportunities for youth and women.
-              </p>
-              <ul class="space-y-2 mb-6">
-                <li class="flex items-start">
-                  <i class="fas fa-check text-[#2E8B57] mr-2 mt-1"></i>
-                  <span>Micro-enterprise development support</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-[#2E8B57] mr-2 mt-1"></i>
-                  <span>Agricultural value chain development</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-[#2E8B57] mr-2 mt-1"></i>
-                  <span>Business skills and financial literacy training</span>
-                </li>
-              </ul>
+              <h3 class="text-2xl font-bold mb-4">Economic Empowerment</h3>
+              <p class="text-gray-600 mb-6">Creating sustainable livelihoods and economic opportunities for youth and women in the community.</p>
+              <a href="#" class="inline-flex items-center text-[#8B0000] font-semibold">
+                Learn More <i class="fas fa-arrow-right ml-2"></i>
+              </a>
             </div>
           </div>
           
           <!-- Program 5 -->
-          <div class="card">
-            <div class="p-6">
+          <div class="card-hover fade-in">
+            <div class="p-8 h-full">
               <div class="program-icon">
                 <i class="fas fa-heartbeat"></i>
               </div>
-              <h3 class="text-xl font-bold mb-4">Health & Social Welfare</h3>
-              <p class="text-gray-700 mb-4">
-                Improving community health outcomes and social support systems.
-              </p>
-              <ul class="space-y-2 mb-6">
-                <li class="flex items-start">
-                  <i class="fas fa-check text-[#2E8B57] mr-2 mt-1"></i>
-                  <span>Health awareness and screening programs</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-[#2E8B57] mr-2 mt-1"></i>
-                  <span>Support for vulnerable groups (elderly, disabled)</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-[#2E8B57] mr-2 mt-1"></i>
-                  <span>Maternal and child health initiatives</span>
-                </li>
-              </ul>
+              <h3 class="text-2xl font-bold mb-4">Health & Social Welfare</h3>
+              <p class="text-gray-600 mb-6">Improving community health outcomes through awareness programs and support for vulnerable groups.</p>
+              <a href="#" class="inline-flex items-center text-[#8B0000] font-semibold">
+                Learn More <i class="fas fa-arrow-right ml-2"></i>
+              </a>
             </div>
           </div>
           
           <!-- Program 6 -->
-          <div class="card">
-            <div class="p-6">
+          <div class="card-hover fade-in">
+            <div class="p-8 h-full">
               <div class="program-icon">
                 <i class="fas fa-peace"></i>
               </div>
-              <h3 class="text-xl font-bold mb-4">Peacebuilding & Advocacy</h3>
-              <p class="text-gray-700 mb-4">
-                Fostering peaceful coexistence and advocating for community interests.
-              </p>
-              <ul class="space-y-2 mb-6">
-                <li class="flex items-start">
-                  <i class="fas fa-check text-[#2E8B57] mr-2 mt-1"></i>
-                  <span>Conflict mediation and resolution</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-[#2E8B57] mr-2 mt-1"></i>
-                  <span>Stakeholder engagement and advocacy</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-[#2E8B57] mr-2 mt-1"></i>
-                  <span>Community governance and participation</span>
-                </li>
-              </ul>
+              <h3 class="text-2xl font-bold mb-4">Peacebuilding & Advocacy</h3>
+              <p class="text-gray-600 mb-6">Fostering peaceful coexistence and advocating for community interests through stakeholder engagement.</p>
+              <a href="#" class="inline-flex items-center text-[#8B0000] font-semibold">
+                Learn More <i class="fas fa-arrow-right ml-2"></i>
+              </a>
             </div>
           </div>
+        </div>
+        
+        <div class="text-center">
+          <a href="#" class="btn-primary">
+            <i class="fas fa-chart-line"></i> View All Programs
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- News Section -->
-    <section id="news" class="section-padding bg-gray-50">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="heading-primary">News & Updates</h2>
-          <div class="divider"></div>
-          <p>Latest announcements, community meetings, and project milestones</p>
+    <!-- Impact Section -->
+    <section id="impact" class="section-spacing bg-gradient-to-b from-white to-gray-50">
+      <div class="container-custom">
+        <div class="text-center mb-20">
+          <h2 class="section-title">Our <span class="gradient-text">Impact</span> in Numbers</h2>
+          <p class="section-subtitle">Measuring progress through transparent metrics and community outcomes</p>
         </div>
         
-        <div class="grid md:grid-cols-3 gap-8">
-          <!-- News 1 -->
-          <div class="card">
-            <div class="p-6">
-              <div class="flex justify-between items-start mb-4">
-                <span class="bg-[#8B0000] text-white text-xs px-3 py-1 rounded-full">Announcement</span>
-                <span class="text-gray-500 text-sm">Dec 15, 2024</span>
-              </div>
-              <h3 class="text-xl font-bold mb-4">2024 Annual General Meeting Report</h3>
-              <p class="text-gray-700 mb-6">
-                Summary of decisions, financial reports, and project approvals from the 2024 AGM held on December 10, 2024.
-              </p>
-              <a href="#" class="text-[#8B0000] font-semibold hover:underline">
-                Read Full Report <i class="fas fa-arrow-right ml-1"></i>
-              </a>
-            </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+          <div class="stat-card fade-in">
+            <div class="stat-number">15+</div>
+            <div class="text-gray-600 font-medium">Partner Organizations</div>
+            <div class="mt-4 text-sm text-gray-500">Collaborating for community development</div>
           </div>
           
-          <!-- News 2 -->
-          <div class="card">
-            <div class="p-6">
-              <div class="flex justify-between items-start mb-4">
-                <span class="bg-[#2E8B57] text-white text-xs px-3 py-1 rounded-full">Project Update</span>
-                <span class="text-gray-500 text-sm">Nov 28, 2024</span>
-              </div>
-              <h3 class="text-xl font-bold mb-4">Completion of Akpautong Borehole Project</h3>
-              <p class="text-gray-700 mb-6">
-                The community borehole project at Akpautong Central has been successfully completed, providing clean water to 500+ households.
-              </p>
-              <a href="#" class="text-[#8B0000] font-semibold hover:underline">
-                View Project Details <i class="fas fa-arrow-right ml-1"></i>
-              </a>
-            </div>
+          <div class="stat-card fade-in">
+            <div class="stat-number">5,000+</div>
+            <div class="text-gray-600 font-medium">Community Members Served</div>
+            <div class="mt-4 text-sm text-gray-500">Across Akpautong-Urua Okok communities</div>
           </div>
           
-          <!-- News 3 -->
-          <div class="card">
-            <div class="p-6">
-              <div class="flex justify-between items-start mb-4">
-                <span class="bg-[#D4AF37] text-gray-800 text-xs px-3 py-1 rounded-full">Partnership</span>
-                <span class="text-gray-500 text-sm">Oct 15, 2024</span>
-              </div>
-              <h3 class="text-xl font-bold mb-4">New Partnership with State Ministry of Agriculture</h3>
-              <p class="text-gray-700 mb-6">
-                ITAOCDN signs MOU with Akwa Ibom State Ministry of Agriculture for agricultural extension services and farm input support.
-              </p>
-              <a href="#" class="text-[#8B0000] font-semibold hover:underline">
-                Learn More <i class="fas fa-arrow-right ml-1"></i>
-              </a>
-            </div>
+          <div class="stat-card fade-in">
+            <div class="stat-number">₦50M+</div>
+            <div class="text-gray-600 font-medium">Project Investments</div>
+            <div class="mt-4 text-sm text-gray-500">In community development initiatives</div>
+          </div>
+          
+          <div class="stat-card fade-in">
+            <div class="stat-number">100%</div>
+            <div class="text-gray-600 font-medium">Transparent Reporting</div>
+            <div class="mt-4 text-sm text-gray-500">Financial and project accountability</div>
           </div>
         </div>
         
-        <div class="text-center mt-8">
+        <div class="text-center">
+          <a href="#" class="btn-secondary">
+            <i class="fas fa-file-alt"></i> Download Impact Report
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section id="leadership" class="section-spacing bg-white">
+      <div class="container-custom">
+        <div class="text-center mb-20">
+          <h2 class="section-title">Our <span class="gradient-text">Leadership</span> Team</h2>
+          <p class="section-subtitle">Dedicated individuals guiding our community development journey</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mb-20">
+          <!-- Leader 1 -->
+          <div class="card-hover fade-in">
+            <div class="p-8">
+              <div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-[#8B0000] to-[#D4AF37] mx-auto mb-6 flex items-center justify-center">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Trustee" class="w-20 h-20 rounded-xl object-cover">
+              </div>
+              <h3 class="text-2xl font-bold text-center mb-2">Chief (Dr.) Uduak J. Akpan</h3>
+              <p class="text-[#8B0000] text-center font-semibold mb-4">Chairman, Board of Trustees</p>
+              <p class="text-gray-600 text-center">Community leader with over 20 years of experience in community development and public service.</p>
+            </div>
+          </div>
+          
+          <!-- Leader 2 -->
+          <div class="card-hover fade-in">
+            <div class="p-8">
+              <div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-[#8B0000] to-[#D4AF37] mx-auto mb-6 flex items-center justify-center">
+                <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Trustee" class="w-20 h-20 rounded-xl object-cover">
+              </div>
+              <h3 class="text-2xl font-bold text-center mb-2">Prof. Iniobong E. Williams</h3>
+              <p class="text-[#8B0000] text-center font-semibold mb-4">Vice Chairman</p>
+              <p class="text-gray-600 text-center">Academic and development expert specializing in community-based sustainable development approaches.</p>
+            </div>
+          </div>
+          
+          <!-- Leader 3 -->
+          <div class="card-hover fade-in">
+            <div class="p-8">
+              <div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-[#8B0000] to-[#D4AF37] mx-auto mb-6 flex items-center justify-center">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Trustee" class="w-20 h-20 rounded-xl object-cover">
+              </div>
+              <h3 class="text-2xl font-bold text-center mb-2">Mrs. Grace E. Okon</h3>
+              <p class="text-[#8B0000] text-center font-semibold mb-4">Secretary</p>
+              <p class="text-gray-600 text-center">Legal practitioner and advocate for women's empowerment with extensive nonprofit governance experience.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center">
           <a href="#" class="btn-primary">
-            <i class="fas fa-newspaper mr-2"></i> View All News & Updates
+            <i class="fas fa-users"></i> Meet Full Leadership Team
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="section-spacing bg-gray-50">
+      <div class="container-custom">
+        <div class="text-center mb-20">
+          <h2 class="section-title">Resources & <span class="gradient-text">Publications</span></h2>
+          <p class="section-subtitle">Transparent documentation of our work and governance</p>
+        </div>
+        
+        <div class="max-w-4xl mx-auto mb-16">
+          <div class="document-item fade-in">
+            <div class="document-icon">
+              <i class="fas fa-file-contract"></i>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-bold mb-2">Constitution of the Trust</h3>
+              <p class="text-gray-600">Official governing document of ITAOCDN outlining structure, mandate, and operational guidelines.</p>
+            </div>
+            <div>
+              <a href="#" class="btn-primary py-3 px-6">
+                <i class="fas fa-download"></i>
+              </a>
+            </div>
+          </div>
+          
+          <div class="document-item fade-in">
+            <div class="document-icon">
+              <i class="fas fa-file-alt"></i>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-bold mb-2">2024 Annual General Meeting Report</h3>
+              <p class="text-gray-600">Comprehensive report including financial statements, project updates, and community decisions.</p>
+            </div>
+            <div>
+              <a href="#" class="btn-primary py-3 px-6">
+                <i class="fas fa-download"></i>
+              </a>
+            </div>
+          </div>
+          
+          <div class="document-item fade-in">
+            <div class="document-icon">
+              <i class="fas fa-file-invoice-dollar"></i>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-bold mb-2">2023 Financial Audit Report</h3>
+              <p class="text-gray-600">Independent audit of organizational finances ensuring transparency and accountability.</p>
+            </div>
+            <div>
+              <a href="#" class="btn-primary py-3 px-6">
+                <i class="fas fa-download"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center">
+          <a href="#" class="btn-secondary">
+            <i class="fas fa-folder-open"></i> View All Resources
           </a>
         </div>
       </div>
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="section-padding bg-white">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="heading-primary">Photo Gallery</h2>
-          <div class="divider"></div>
-          <p>Visual documentation of our projects, meetings, and community events</p>
+    <section class="py-20 bg-white">
+      <div class="container-custom">
+        <div class="text-center mb-20">
+          <h2 class="section-title">Community <span class="gradient-text">Gallery</span></h2>
+          <p class="section-subtitle">Visual stories of our projects, meetings, and community events</p>
         </div>
         
-        <div class="gallery-grid">
-          <!-- Gallery items would be populated dynamically -->
+        <div class="gallery-grid mb-16">
           <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Community Meeting">
+            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Community Meeting">
           </div>
           <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Education Project">
+            <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Education Project">
           </div>
           <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1586773860418-dc22f8b874bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Water Project">
+            <img src="https://images.unsplash.com/photo-1586773860418-dc22f8b874bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Water Project">
           </div>
           <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Agriculture Project">
+            <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Agriculture Project">
           </div>
           <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Community Event">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Community Event">
           </div>
           <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Infrastructure Project">
+            <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Infrastructure Project">
           </div>
         </div>
         
-        <div class="text-center mt-8">
+        <div class="text-center">
           <a href="#" class="btn-primary">
-            <i class="fas fa-images mr-2"></i> View Full Gallery
+            <i class="fas fa-images"></i> View Full Gallery
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Publications Section -->
-    <section id="publications" class="section-padding bg-gray-50">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="heading-primary">Publications & Documents</h2>
-          <div class="divider"></div>
-          <p>Official documents, reports, and organizational publications</p>
-        </div>
-        
-        <div class="max-w-3xl mx-auto">
-          <!-- Document 1 -->
-          <div class="document-item">
-            <div class="document-icon">
-              <i class="fas fa-file-contract"></i>
-            </div>
-            <div class="flex-1">
-              <h4 class="font-bold">Constitution of the Trust</h4>
-              <p class="text-gray-600 text-sm">Official governing document of ITAOCDN</p>
-            </div>
-            <div>
-              <a href="#" class="btn-primary py-2 px-4 text-sm">
-                <i class="fas fa-download mr-1"></i> Download
-              </a>
-            </div>
-          </div>
-          
-          <!-- Document 2 -->
-          <div class="document-item">
-            <div class="document-icon">
-              <i class="fas fa-file-alt"></i>
-            </div>
-            <div class="flex-1">
-              <h4 class="font-bold">2024 Annual General Meeting Report</h4>
-              <p class="text-gray-600 text-sm">Comprehensive report including financial statements and project updates</p>
-            </div>
-            <div>
-              <a href="#" class="btn-primary py-2 px-4 text-sm">
-                <i class="fas fa-download mr-1"></i> Download
-              </a>
-            </div>
-          </div>
-          
-          <!-- Document 3 -->
-          <div class="document-item">
-            <div class="document-icon">
-              <i class="fas fa-file-invoice-dollar"></i>
-            </div>
-            <div class="flex-1">
-              <h4 class="font-bold">2023 Financial Audit Report</h4>
-              <p class="text-gray-600 text-sm">Independent audit of organizational finances</p>
-            </div>
-            <div>
-              <a href="#" class="btn-primary py-2 px-4 text-sm">
-                <i class="fas fa-download mr-1"></i> Download
-              </a>
-            </div>
-          </div>
-          
-          <!-- Document 4 -->
-          <div class="document-item">
-            <div class="document-icon">
-              <i class="fas fa-file-signature"></i>
-            </div>
-            <div class="flex-1">
-              <h4 class="font-bold">Project Implementation Framework</h4>
-              <p class="text-gray-600 text-sm">Guidelines for project planning, implementation, and monitoring</p>
-            </div>
-            <div>
-              <a href="#" class="btn-primary py-2 px-4 text-sm">
-                <i class="fas fa-download mr-1"></i> Download
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Membership Section -->
-    <section id="membership" class="section-padding bg-white">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="heading-primary">Join Our Community</h2>
-          <div class="divider"></div>
-          <p>Become a member or volunteer to contribute to community development</p>
-        </div>
-        
-        <div class="grid md:grid-cols-2 gap-12">
-          <div>
-            <h3 class="text-2xl font-bold mb-6">Membership Eligibility</h3>
-            <p class="mb-6">
-              Membership is open to all indigenes and residents of Akpautong–Urua Okok communities who share our vision for community development.
-            </p>
-            
-            <div class="mb-8">
-              <h4 class="text-xl font-semibold mb-4">Membership Criteria</h4>
-              <ul class="space-y-3">
-                <li class="flex items-start">
-                  <i class="fas fa-check text-[#2E8B57] mr-3 mt-1"></i>
-                  <span>Must be an indigene or resident of Akpautong–Urua Okok communities</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-[#2E8B57] mr-3 mt-1"></i>
-                  <span>Commitment to community development principles</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-[#2E8B57] mr-3 mt-1"></i>
-                  <span>Willingness to participate in community activities</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-[#2E8B57] mr-3 mt-1"></i>
-                  <span>Adherence to organizational constitution and code of conduct</span>
-                </li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 class="text-xl font-semibold mb-4">Membership Benefits</h4>
-              <ul class="space-y-3">
-                <li class="flex items-start">
-                  <i class="fas fa-check text-[#2E8B57] mr-3 mt-1"></i>
-                  <span>Participation in community decision-making</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-[#2E8B57] mr-3 mt-1"></i>
-                  <span>Access to capacity-building programs</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-[#2E8B57] mr-3 mt-1"></i>
-                  <span>Eligibility for community support programs</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-[#2E8B57] mr-3 mt-1"></i>
-                  <span>Networking opportunities with community stakeholders</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          
-          <div>
-            <div class="card p-8">
-              <h3 class="text-2xl font-bold mb-6">Apply Now</h3>
-              
-              <form id="membership-form">
-                <div class="mb-6">
-                  <label class="block text-gray-700 mb-2" for="name">Full Name</label>
-                  <input type="text" id="name" class="w-full p-3 border border-gray-300 rounded-lg" required>
-                </div>
-                
-                <div class="mb-6">
-                  <label class="block text-gray-700 mb-2" for="email">Email Address</label>
-                  <input type="email" id="email" class="w-full p-3 border border-gray-300 rounded-lg" required>
-                </div>
-                
-                <div class="mb-6">
-                  <label class="block text-gray-700 mb-2" for="phone">Phone Number</label>
-                  <input type="tel" id="phone" class="w-full p-3 border border-gray-300 rounded-lg" required>
-                </div>
-                
-                <div class="mb-6">
-                  <label class="block text-gray-700 mb-2" for="community">Community of Origin/Residence</label>
-                  <select id="community" class="w-full p-3 border border-gray-300 rounded-lg" required>
-                    <option value="">Select Community</option>
-                    <option value="akpautong">Akpautong</option>
-                    <option value="urua-okok">Urua Okok</option>
-                    <option value="other">Other (Specify in Address)</option>
-                  </select>
-                </div>
-                
-                <div class="mb-6">
-                  <label class="block text-gray-700 mb-2" for="interest">Area of Interest</label>
-                  <select id="interest" class="w-full p-3 border border-gray-300 rounded-lg" required>
-                    <option value="">Select Area of Interest</option>
-                    <option value="membership">General Membership</option>
-                    <option value="volunteer">Volunteer</option>
-                    <option value="committee">Committee Participation</option>
-                    <option value="partnership">Organizational Partnership</option>
-                  </select>
-                </div>
-                
-                <div class="mb-6">
-                  <label class="block text-gray-700 mb-2" for="message">Why do you want to join ITAOCDN?</label>
-                  <textarea id="message" rows="4" class="w-full p-3 border border-gray-300 rounded-lg"></textarea>
-                </div>
-                
-                <button type="submit" class="btn-primary w-full py-4">
-                  Submit Application
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Contact Section -->
-    <section id="contact" class="section-padding bg-gray-50">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="heading-primary">Contact Us</h2>
-          <div class="divider"></div>
-          <p>Get in touch with ITAOCDN for inquiries, partnerships, or support</p>
-        </div>
-        
-        <div class="grid md:grid-cols-3 gap-8 mb-12">
-          <div class="text-center">
-            <div class="program-icon mx-auto">
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-4">Registered Office</h3>
-            <p class="text-gray-700">
-              Esit Eket Local Government Area<br>
-              Akwa Ibom State, Nigeria
-            </p>
-          </div>
-          
-          <div class="text-center">
-            <div class="program-icon mx-auto">
-              <i class="fas fa-phone"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-4">Phone Contacts</h3>
-            <p class="text-gray-700">
-              +234 802 327 4698<br>
-              +234 803 770 4123<br>
-              +234 802 603 1267<br>
-              +234 814 817 5129
-            </p>
-          </div>
-          
-          <div class="text-center">
-            <div class="program-icon mx-auto">
-              <i class="fas fa-envelope"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-4">Email Addresses</h3>
-            <p class="text-gray-700">
-              Official@ITAOCDN.com<br>
-              Boardoftrustee@ITAOCDN.com<br>
-              MgtCommittee@ITAOCDN.com<br>
-              Caucusassembly@ITAOCDN.com
-            </p>
-          </div>
-        </div>
-        
-        <div class="max-w-3xl mx-auto">
-          <div class="card p-8">
-            <h3 class="text-2xl font-bold mb-6">Send Us a Message</h3>
+    <section id="contact" class="section-spacing bg-gradient-to-r from-[#8B0000] to-[#600000] relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full translate-x-1/2 translate-y-1/2"></div>
+      </div>
+      
+      <div class="container-custom relative z-10">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="fade-in">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-8 font-display">
+              Get Involved with <span class="text-[#D4AF37]">ITAOCDN</span>
+            </h2>
             
-            <form id="contact-form">
-              <div class="grid md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <label class="block text-gray-700 mb-2" for="contact-name">Full Name</label>
-                  <input type="text" id="contact-name" class="w-full p-3 border border-gray-300 rounded-lg" required>
+            <p class="text-xl text-white/90 mb-12">
+              Join our community development journey as a member, volunteer, or partner organization. Together, we can build sustainable communities.
+            </p>
+            
+            <div class="space-y-8">
+              <div class="flex items-center gap-6">
+                <div class="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center">
+                  <i class="fas fa-phone text-white text-xl"></i>
                 </div>
+                <div>
+                  <h4 class="text-white font-bold text-lg">Phone Contacts</h4>
+                  <p class="text-white/80">
+                    +234 802 327 4698<br>
+                    +234 803 770 4123<br>
+                    +234 802 603 1267<br>
+                    +234 814 817 5129
+                  </p>
+                </div>
+              </div>
+              
+              <div class="flex items-center gap-6">
+                <div class="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center">
+                  <i class="fas fa-envelope text-white text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="text-white font-bold text-lg">Email Addresses</h4>
+                  <p class="text-white/80">
+                    Official@ITAOCDN.com<br>
+                    Boardoftrustee@ITAOCDN.com<br>
+                    MgtCommittee@ITAOCDN.com<br>
+                    Caucusassembly@ITAOCDN.com
+                  </p>
+                </div>
+              </div>
+              
+              <div class="flex items-center gap-6">
+                <div class="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center">
+                  <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="text-white font-bold text-lg">Office Location</h4>
+                  <p class="text-white/80">
+                    Esit Eket Local Government Area<br>
+                    Akwa Ibom State, Nigeria
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="fade-in">
+            <div class="card-hover">
+              <div class="p-10">
+                <h3 class="text-3xl font-bold mb-8">Send Us a Message</h3>
                 
-                <div>
-                  <label class="block text-gray-700 mb-2" for="contact-email">Email Address</label>
-                  <input type="email" id="contact-email" class="w-full p-3 border border-gray-300 rounded-lg" required>
-                </div>
+                <form id="contact-form">
+                  <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                      <label class="form-label">Full Name</label>
+                      <input type="text" class="form-input" placeholder="John Doe" required>
+                    </div>
+                    
+                    <div>
+                      <label class="form-label">Email Address</label>
+                      <input type="email" class="form-input" placeholder="john@example.com" required>
+                    </div>
+                  </div>
+                  
+                  <div class="mb-6">
+                    <label class="form-label">Subject</label>
+                    <input type="text" class="form-input" placeholder="Inquiry about..." required>
+                  </div>
+                  
+                  <div class="mb-8">
+                    <label class="form-label">Message</label>
+                    <textarea class="form-input" rows="5" placeholder="Your message here..." required></textarea>
+                  </div>
+                  
+                  <button type="submit" class="btn-primary w-full">
+                    <i class="fas fa-paper-plane"></i> Send Message
+                  </button>
+                </form>
               </div>
-              
-              <div class="mb-6">
-                <label class="block text-gray-700 mb-2" for="subject">Subject</label>
-                <input type="text" id="subject" class="w-full p-3 border border-gray-300 rounded-lg" required>
-              </div>
-              
-              <div class="mb-6">
-                <label class="block text-gray-700 mb-2" for="contact-message">Message</label>
-                <textarea id="contact-message" rows="5" class="w-full p-3 border border-gray-300 rounded-lg" required></textarea>
-              </div>
-              
-              <button type="submit" class="btn-primary">
-                Send Message
-              </button>
-            </form>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer pt-12 pb-8">
-      <div class="container">
-        <div class="grid md:grid-cols-4 gap-8 mb-12">
+    <footer class="py-16 bg-gray-900 text-white">
+      <div class="container-custom">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div>
-            <div class="flex items-center mb-6">
-              <div class="w-10 h-10 bg-[#8B0000] rounded-full flex items-center justify-center mr-3">
-                <span class="text-white font-bold">ITA</span>
+            <div class="flex items-center gap-4 mb-8">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#8B0000] to-[#D4AF37] flex items-center justify-center">
+                <img src="img/logo.png" alt="ITAOCDN Logo" class="w-8 h-8">
               </div>
               <div>
-                <h3 class="text-xl font-bold">ITAOCDN</h3>
+                <h3 class="text-2xl font-bold font-display">ITAOCDN</h3>
+                <p class="text-sm text-gray-400">Community Development Network</p>
               </div>
             </div>
-            <p class="mb-6">
-              The Incorporated Trustee of Akpautong Urua Okok Communities Development Network exists to institutionalize community aspirations and ensure measurable, transparent, and enduring progress.
+            
+            <p class="text-gray-400 mb-8">
+              Building united, progressive, and self-sustaining communities through inclusive development and shared responsibility.
             </p>
+            
+            <div class="flex gap-4">
+              <a href="#" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#8B0000] transition-colors">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#8B0000] transition-colors">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#8B0000] transition-colors">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#8B0000] transition-colors">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
           </div>
           
           <div>
-            <h4 class="text-lg font-bold mb-6">Quick Links</h4>
-            <ul class="space-y-3">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#trustees">Trustees</a></li>
-              <li><a href="#programs">Programs</a></li>
-              <li><a href="#news">News & Updates</a></li>
+            <h4 class="text-xl font-bold mb-8">Quick Links</h4>
+            <ul class="space-y-4">
+              <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+              <li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
+              <li><a href="#programs" class="text-gray-400 hover:text-white transition">Programs</a></li>
+              <li><a href="#impact" class="text-gray-400 hover:text-white transition">Our Impact</a></li>
+              <li><a href="#leadership" class="text-gray-400 hover:text-white transition">Leadership</a></li>
             </ul>
           </div>
           
           <div>
-            <h4 class="text-lg font-bold mb-6">Resources</h4>
-            <ul class="space-y-3">
-              <li><a href="#gallery">Photo Gallery</a></li>
-              <li><a href="#publications">Publications</a></li>
-              <li><a href="#membership">Membership</a></li>
-              <li><a href="#contact">Contact Us</a></li>
-              <li><a href="#">Privacy Policy</a></li>
+            <h4 class="text-xl font-bold mb-8">Resources</h4>
+            <ul class="space-y-4">
+              <li><a href="#" class="text-gray-400 hover:text-white transition">Gallery</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition">Publications</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition">Membership</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition">Volunteer</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition">Partnership</a></li>
             </ul>
           </div>
           
           <div>
-            <h4 class="text-lg font-bold mb-6">Legal & Compliance</h4>
-            <ul class="space-y-3">
-              <li><a href="#">Constitution</a></li>
-              <li><a href="#">Financial Reports</a></li>
-              <li><a href="#">Organizational Disclaimer</a></li>
-              <li><a href="#">Terms of Use</a></li>
-              <li><a href="#">CAC Registration</a></li>
+            <h4 class="text-xl font-bold mb-8">Legal</h4>
+            <ul class="space-y-4">
+              <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition">Terms of Use</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition">Organizational Disclaimer</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition">CAC Registration</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition">Financial Reports</a></li>
             </ul>
           </div>
         </div>
         
-        <div class="border-t border-gray-700 pt-8 text-center">
+        <div class="border-t border-gray-800 pt-8 text-center">
           <p class="text-gray-500">
             &copy; <span id="currentYear"></span> Incorporated Trustee of Akpautong Urua Okok Communities Development Network (ITAOCDN). All rights reserved.
           </p>
@@ -1223,16 +1132,7 @@
       document.getElementById('currentYear').textContent = new Date().getFullYear();
       
       // Form submission handling
-      const membershipForm = document.getElementById('membership-form');
       const contactForm = document.getElementById('contact-form');
-      
-      if (membershipForm) {
-        membershipForm.addEventListener('submit', (e) => {
-          e.preventDefault();
-          alert('Thank you for your membership application. We will contact you shortly.');
-          membershipForm.reset();
-        });
-      }
       
       if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
@@ -1245,17 +1145,19 @@
       // Smooth scrolling for anchor links
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href === '#') return;
+          
           e.preventDefault();
-          
-          const targetId = this.getAttribute('href');
-          if (targetId === '#') return;
-          
-          const targetElement = document.querySelector(targetId);
+          const targetElement = document.querySelector(href);
           if (targetElement) {
             window.scrollTo({
-              top: targetElement.offsetTop - 80,
+              top: targetElement.offsetTop - 100,
               behavior: 'smooth'
             });
+            
+            // Close mobile menu if open
+            mobileMenu.classList.add('hidden');
             
             // Update active nav link
             document.querySelectorAll('.nav-link').forEach(link => {
@@ -1266,10 +1168,28 @@
         });
       });
       
+      // Scroll animations
+      const fadeElements = document.querySelectorAll('.fade-in');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+      });
+      
+      fadeElements.forEach(element => {
+        observer.observe(element);
+      });
+      
       // Update active nav link on scroll
       window.addEventListener('scroll', () => {
         const sections = document.querySelectorAll('section[id]');
-        const scrollPosition = window.scrollY + 100;
+        const scrollPosition = window.scrollY + 150;
         
         sections.forEach(section => {
           const sectionTop = section.offsetTop;
@@ -1285,6 +1205,40 @@
             });
           }
         });
+        
+        // Navbar background on scroll
+        const nav = document.querySelector('header');
+        if (window.scrollY > 50) {
+          nav.classList.add('shadow-lg');
+        } else {
+          nav.classList.remove('shadow-lg');
+        }
+      });
+      
+      // Add animation to hero elements
+      document.addEventListener('DOMContentLoaded', () => {
+        const heroTitle = document.querySelector('#home h1');
+        const heroButtons = document.querySelector('#home .btn-primary');
+        
+        if (heroTitle) {
+          heroTitle.style.opacity = '0';
+          heroTitle.style.transform = 'translateY(20px)';
+          
+          setTimeout(() => {
+            heroTitle.style.transition = 'opacity 0.8s, transform 0.8s';
+            heroTitle.style.opacity = '1';
+            heroTitle.style.transform = 'translateY(0)';
+          }, 300);
+        }
+        
+        if (heroButtons) {
+          heroButtons.style.opacity = '0';
+          
+          setTimeout(() => {
+            heroButtons.style.transition = 'opacity 0.8s 0.3s';
+            heroButtons.style.opacity = '1';
+          }, 600);
+        }
       });
     </script>
   </body>
