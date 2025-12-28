@@ -61,8 +61,28 @@
         }
       }
       
-      .hero-gradient {
-        background: linear-gradient(135deg, #8B0000 0%, #600000 100%);
+      .hero-video-bg {
+        position: relative;
+        background-color: #000;
+        overflow: hidden;
+      }
+      
+      .hero-video-bg::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(139,0,0,0.8) 0%, rgba(96,0,0,0.9) 100%);
+        z-index: 1;
+      }
+      
+      .hero-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
       }
       
       .btn-primary {
@@ -94,7 +114,7 @@
       
       .btn-secondary {
         background-color: transparent;
-        color: var(--primary);
+        color: white;
         padding: 1rem 2.5rem;
         border-radius: 50px;
         font-weight: 600;
@@ -103,13 +123,13 @@
         align-items: center;
         justify-content: center;
         gap: 0.75rem;
-        border: 2px solid var(--primary);
+        border: 2px solid white;
         font-size: 1.05rem;
       }
       
       .btn-secondary:hover {
-        background-color: var(--primary);
-        color: white;
+        background-color: white;
+        color: var(--primary);
         transform: translateY(-3px);
         box-shadow: 0 15px 30px rgba(139, 0, 0, 0.15);
       }
@@ -129,7 +149,7 @@
       }
       
       .gradient-text {
-        background: linear-gradient(135deg, #8B0000 0%, #D4AF37 100%);
+        background: linear-gradient(135deg, #D4AF37 0%, #FFFFFF 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -403,6 +423,12 @@
         background-image: radial-gradient(circle at 1px 1px, rgba(139, 0, 0, 0.05) 1px, transparent 0);
         background-size: 40px 40px;
       }
+      
+      .leadership-table th {
+        background-color: rgba(139, 0, 0, 0.05);
+        font-weight: 700;
+        color: var(--primary);
+      }
     </style>
   </head>
   <body class="bg-white">
@@ -410,10 +436,9 @@
     <header class="fixed top-0 left-0 right-0 z-50 nav-blur shadow-sm">
       <div class="container-custom">
         <div class="flex justify-between items-center py-5">
-          <!-- Logo -->
+          <!-- Logo - Removed background color/gradient -->
           <a href="#home" class="flex items-center gap-4">
-            <!-- Logo Image - Replace with actual logo -->
-            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#8B0000] to-[#600000] flex items-center justify-center shadow-lg">
+            <div class="w-14 h-14 rounded-xl flex items-center justify-center shadow-lg">
               <img src="img/logo.png" alt="ITAOCDN Logo" class="w-10 h-10">
             </div>
             <div>
@@ -458,75 +483,65 @@
       </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="section-spacing pt-24 relative overflow-hidden">
+    <!-- Hero Section - Full video background, centered text, no side image -->
+    <section id="home" class="section-spacing pt-24 relative hero-video-bg min-h-screen flex items-center">
+      <!-- Globe video background -->
+      <video autoplay muted loop playsinline class="hero-video">
+        <source src="https://player.vimeo.com/external/345445468.hd.mp4?s=8b6f0d8e3a6d8e3f0d8e3a6d8e3f0d8e&profile_id=175" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      
+      <!-- Hero content - centered -->
+      <div class="container-custom relative z-10 mx-auto text-center text-white fade-in">
+        <div class="inline-flex items-center gap-3 mb-8 px-4 py-2 bg-white/20 rounded-full backdrop-blur-sm">
+          <span class="w-2 h-2 bg-[#D4AF37] rounded-full"></span>
+          <span class="text-sm font-semibold">SINCE 2018</span>
+        </div>
+        
+        <h1 class="section-title font-display max-w-5xl mx-auto">
+          Building <span class="gradient-text">Sustainable</span> Communities in Akwa Ibom
+        </h1>
+        
+        <p class="text-xl md:text-2xl text-white/90 mb-10 max-w-4xl mx-auto">
+          The Incorporated Trustee of Akpautong Urua Okok Communities Development Network exists to institutionalize community aspirations and translate collective intent into structured development action.
+        </p>
+        
+        <div class="flex flex-wrap justify-center gap-6 mb-16">
+          <a href="#membership" class="btn-primary">
+            <i class="fas fa-user-plus"></i> Join Our Community
+          </a>
+          <a href="#programs" class="btn-secondary">
+            <i class="fas fa-play-circle"></i> Watch Our Story
+          </a>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
+          <div>
+            <div class="stat-number text-white">500+</div>
+            <div class="text-white/90 font-medium">Active Members</div>
+          </div>
+          <div>
+            <div class="stat-number text-white">25+</div>
+            <div class="text-white/90 font-medium">Projects</div>
+          </div>
+          <div>
+            <div class="stat-number text-white">5+</div>
+            <div class="text-white/90 font-medium">Years</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section class="py-20 bg-white">
       <div class="container-custom">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
-          <div class="fade-in">
-            <div class="inline-flex items-center gap-3 mb-8 px-4 py-2 bg-gradient-to-r from-[#8B0000]/10 to-[#D4AF37]/10 rounded-full">
-              <span class="w-2 h-2 bg-[#8B0000] rounded-full"></span>
-              <span class="text-sm font-semibold text-[#8B0000]">SINCE 2018</span>
-            </div>
-            
-            <h1 class="section-title font-display">
-              Building <span class="gradient-text">Sustainable</span> Communities in Akwa Ibom
-            </h1>
-            
-            <p class="text-xl text-gray-600 mb-10">
-              The Incorporated Trustee of Akpautong Urua Okok Communities Development Network exists to institutionalize community aspirations and translate collective intent into structured development action.
-            </p>
-            
-            <div class="flex flex-wrap gap-4 mb-16">
-              <a href="#membership" class="btn-primary">
-                <i class="fas fa-user-plus"></i> Join Our Community
-              </a>
-              <a href="#programs" class="btn-secondary">
-                <i class="fas fa-play-circle"></i> Watch Our Story
-              </a>
-            </div>
-            
-            <div class="grid grid-cols-3 gap-8">
-              <div>
-                <div class="stat-number">500+</div>
-                <div class="text-gray-600 font-medium">Active Members</div>
-              </div>
-              <div>
-                <div class="stat-number">25+</div>
-                <div class="text-gray-600 font-medium">Projects</div>
-              </div>
-              <div>
-                <div class="stat-number">5+</div>
-                <div class="text-gray-600 font-medium">Years</div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="relative fade-in">
-            <div class="absolute -top-10 -right-10 w-64 h-64 bg-gradient-to-br from-[#D4AF37]/20 to-[#8B0000]/20 rounded-full blur-3xl"></div>
-            <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-gradient-to-br from-[#8B0000]/20 to-[#D4AF37]/20 rounded-full blur-3xl"></div>
-            
-            <div class="card-hover overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" 
-                alt="Community Development"
-                class="w-full h-96 object-cover"
-              >
-              <div class="p-8">
-                <div class="flex items-center gap-4 mb-4">
-                  <div class="program-icon">
-                    <i class="fas fa-bullseye"></i>
-                  </div>
-                  <div>
-                    <h3 class="text-2xl font-bold">Our Vision</h3>
-                    <p class="text-gray-600">United, progressive, and self-sustaining communities</p>
-                  </div>
-                </div>
-                <p class="text-gray-700">
-                  To build a united, progressive, and self-sustaining Akpautong–Urua Okok communities, anchored on inclusive development, transparent leadership, and shared responsibility.
-                </p>
-              </div>
-            </div>
-          </div>
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-4xl md:text-5xl font-bold mb-10 font-display">
+            Our <span class="gradient-text">Vision</span>
+          </h2>
+          <p class="text-2xl text-gray-700 leading-relaxed">
+            To build a united, progressive, and self-sustaining Akpautong–Urua Okok communities, anchored on inclusive development, transparent leadership, and shared responsibility.
+          </p>
         </div>
       </div>
     </section>
@@ -542,7 +557,7 @@
         <div class="max-w-4xl mx-auto text-center">
           <div class="inline-flex items-center gap-3 mb-8 px-4 py-2 bg-white/20 rounded-full backdrop-blur-sm">
             <i class="fas fa-quote-left text-white"></i>
-            <span class="text-white font-semibold">OUR MANDATE</span>
+            <span class="text-white font-semibold">OUR MISSION</span>
           </div>
           
           <h2 class="text-4xl md:text-5xl font-bold text-white mb-10 font-display">
@@ -647,7 +662,6 @@
         </div>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          <!-- Program 1 -->
           <div class="card-hover fade-in">
             <div class="p-8 h-full">
               <div class="program-icon">
@@ -661,7 +675,6 @@
             </div>
           </div>
           
-          <!-- Program 2 -->
           <div class="card-hover fade-in">
             <div class="p-8 h-full">
               <div class="program-icon">
@@ -675,7 +688,6 @@
             </div>
           </div>
           
-          <!-- Program 3 -->
           <div class="card-hover fade-in">
             <div class="p-8 h-full">
               <div class="program-icon">
@@ -689,7 +701,6 @@
             </div>
           </div>
           
-          <!-- Program 4 -->
           <div class="card-hover fade-in">
             <div class="p-8 h-full">
               <div class="program-icon">
@@ -703,7 +714,6 @@
             </div>
           </div>
           
-          <!-- Program 5 -->
           <div class="card-hover fade-in">
             <div class="p-8 h-full">
               <div class="program-icon">
@@ -717,7 +727,6 @@
             </div>
           </div>
           
-          <!-- Program 6 -->
           <div class="card-hover fade-in">
             <div class="p-8 h-full">
               <div class="program-icon">
@@ -782,56 +791,109 @@
       </div>
     </section>
 
-    <!-- Leadership Section -->
+    <!-- Leadership & Governance Section -->
     <section id="leadership" class="section-spacing bg-white">
       <div class="container-custom">
         <div class="text-center mb-20">
-          <h2 class="section-title">Our <span class="gradient-text">Leadership</span> Team</h2>
-          <p class="section-subtitle">Dedicated individuals guiding our community development journey</p>
+          <h2 class="section-title">Trustees & <span class="gradient-text">Governance Structure</span></h2>
+          <p class="section-subtitle">Dedicated leadership ensuring transparent and effective community development</p>
         </div>
-        
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mb-20">
-          <!-- Leader 1 -->
-          <div class="card-hover fade-in">
-            <div class="p-8">
-              <div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-[#8B0000] to-[#D4AF37] mx-auto mb-6 flex items-center justify-center">
-                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Trustee" class="w-20 h-20 rounded-xl object-cover">
-              </div>
-              <h3 class="text-2xl font-bold text-center mb-2">Chief (Dr.) Uduak J. Akpan</h3>
-              <p class="text-[#8B0000] text-center font-semibold mb-4">Chairman, Board of Trustees</p>
-              <p class="text-gray-600 text-center">Community leader with over 20 years of experience in community development and public service.</p>
-            </div>
-          </div>
-          
-          <!-- Leader 2 -->
-          <div class="card-hover fade-in">
-            <div class="p-8">
-              <div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-[#8B0000] to-[#D4AF37] mx-auto mb-6 flex items-center justify-center">
-                <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Trustee" class="w-20 h-20 rounded-xl object-cover">
-              </div>
-              <h3 class="text-2xl font-bold text-center mb-2">Prof. Iniobong E. Williams</h3>
-              <p class="text-[#8B0000] text-center font-semibold mb-4">Vice Chairman</p>
-              <p class="text-gray-600 text-center">Academic and development expert specializing in community-based sustainable development approaches.</p>
-            </div>
-          </div>
-          
-          <!-- Leader 3 -->
-          <div class="card-hover fade-in">
-            <div class="p-8">
-              <div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-[#8B0000] to-[#D4AF37] mx-auto mb-6 flex items-center justify-center">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Trustee" class="w-20 h-20 rounded-xl object-cover">
-              </div>
-              <h3 class="text-2xl font-bold text-center mb-2">Mrs. Grace E. Okon</h3>
-              <p class="text-[#8B0000] text-center font-semibold mb-4">Secretary</p>
-              <p class="text-gray-600 text-center">Legal practitioner and advocate for women's empowerment with extensive nonprofit governance experience.</p>
-            </div>
+
+        <!-- Board of Trustees -->
+        <div class="mb-20 fade-in">
+          <h3 class="text-3xl font-bold mb-8 text-center">Board of Trustees</h3>
+          <div class="overflow-x-auto">
+            <table class="min-w-full bg-white rounded-2xl shadow-sm leadership-table">
+              <thead>
+                <tr>
+                  <th class="px-8 py-5 text-left">Name</th>
+                  <th class="px-8 py-5 text-left">Designation</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr>
+                  <td class="px-8 py-5 font-medium">Mr. Eseme Emmanuel Udi</td>
+                  <td class="px-8 py-5">Chairman</td>
+                </tr>
+                <tr>
+                  <td class="px-8 py-5 font-medium">Hon. Okon Edoho</td>
+                  <td class="px-8 py-5">Vice Chairman</td>
+                </tr>
+                <tr>
+                  <td class="px-8 py-5 font-medium">Engr. Emmanuel Akpekong Sam</td>
+                  <td class="px-8 py-5">Secretary</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
-        
-        <div class="text-center">
-          <a href="#" class="btn-primary">
-            <i class="fas fa-users"></i> Meet Full Leadership Team
-          </a>
+
+        <!-- Management Committee -->
+        <div class="mb-20 fade-in">
+          <h3 class="text-3xl font-bold mb-8 text-center">Management Committee</h3>
+          <div class="overflow-x-auto">
+            <table class="min-w-full bg-white rounded-2xl shadow-sm leadership-table">
+              <thead>
+                <tr>
+                  <th class="px-8 py-5 text-left">Name</th>
+                  <th class="px-8 py-5 text-left">Designation</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr>
+                  <td class="px-8 py-5 font-medium">Rt. Hon. Okon Bassey Iyanam</td>
+                  <td class="px-8 py-5">Chairman</td>
+                </tr>
+                <tr>
+                  <td class="px-8 py-5 font-medium">Mr. Unwana Effiong Tom</td>
+                  <td class="px-8 py-5">Secretary</td>
+                </tr>
+                <tr>
+                  <td class="px-8 py-5 font-medium">Mrs. Ini Sunday Nnamudo</td>
+                  <td class="px-8 py-5">Treasurer</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Caucus General Assembly -->
+        <div class="mb-20 fade-in">
+          <h3 class="text-3xl font-bold mb-8 text-center">Caucus General Assembly</h3>
+          <div class="overflow-x-auto">
+            <table class="min-w-full bg-white rounded-2xl shadow-sm leadership-table">
+              <thead>
+                <tr>
+                  <th class="px-8 py-5 text-left">Name</th>
+                  <th class="px-8 py-5 text-left">Designation</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr>
+                  <td class="px-8 py-5 font-medium">Hon. Augustus Amos Nkuseying</td>
+                  <td class="px-8 py-5">Chairman</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mt-12">
+            <h4 class="text-2xl font-bold mb-6 text-center">Members of the ITAOCDN</h4>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div class="text-center p-6 bg-gray-50 rounded-xl">
+                <p class="font-medium">Hon. Samuel Francis Okon</p>
+              </div>
+              <div class="text-center p-6 bg-gray-50 rounded-xl">
+                <p class="font-medium">Hon. Anthony Effiong Okon</p>
+              </div>
+              <div class="text-center p-6 bg-gray-50 rounded-xl">
+                <p class="font-medium">Mr. Godwin Paul Edoho Uqua</p>
+              </div>
+              <div class="text-center p-6 bg-gray-50 rounded-xl">
+                <p class="font-medium">Mr. Gabriel Monday Jimmy</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -899,7 +961,7 @@
       </div>
     </section>
 
-    <!-- Gallery Section -->
+    <!-- Gallery Section - Water project image replaced -->
     <section class="py-20 bg-white">
       <div class="container-custom">
         <div class="text-center mb-20">
@@ -914,8 +976,9 @@
           <div class="gallery-item">
             <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Education Project">
           </div>
+          <!-- Updated Water Project image -->
           <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1586773860418-dc22f8b874bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Water Project">
+            <img src="https://images.pexels.com/photos/28101458/pexels-photo-28101458.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Water Project - Community Borehole">
           </div>
           <div class="gallery-item">
             <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Agriculture Project">
@@ -1039,13 +1102,13 @@
       </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer - Logo background removed -->
     <footer class="py-16 bg-gray-900 text-white">
       <div class="container-custom">
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div>
             <div class="flex items-center gap-4 mb-8">
-              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#8B0000] to-[#D4AF37] flex items-center justify-center">
+              <div class="w-12 h-12 rounded-xl flex items-center justify-center">
                 <img src="img/logo.png" alt="ITAOCDN Logo" class="w-8 h-8">
               </div>
               <div>
@@ -1212,32 +1275,6 @@
           nav.classList.add('shadow-lg');
         } else {
           nav.classList.remove('shadow-lg');
-        }
-      });
-      
-      // Add animation to hero elements
-      document.addEventListener('DOMContentLoaded', () => {
-        const heroTitle = document.querySelector('#home h1');
-        const heroButtons = document.querySelector('#home .btn-primary');
-        
-        if (heroTitle) {
-          heroTitle.style.opacity = '0';
-          heroTitle.style.transform = 'translateY(20px)';
-          
-          setTimeout(() => {
-            heroTitle.style.transition = 'opacity 0.8s, transform 0.8s';
-            heroTitle.style.opacity = '1';
-            heroTitle.style.transform = 'translateY(0)';
-          }, 300);
-        }
-        
-        if (heroButtons) {
-          heroButtons.style.opacity = '0';
-          
-          setTimeout(() => {
-            heroButtons.style.transition = 'opacity 0.8s 0.3s';
-            heroButtons.style.opacity = '1';
-          }, 600);
         }
       });
     </script>
