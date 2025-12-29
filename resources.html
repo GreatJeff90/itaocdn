@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="icon" href="img/logo-1.png" type="image/x-icon">
+    <title>Resources & Blog - ITAUCDN</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root {
+        --primary: #8B0000;
+        --primary-light: #A52A2A;
+        --secondary: #D4AF37;
+        --accent: #0A2472;
+        --light: #F8F9FA;
+        --dark: #121212;
+      }
+      
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      body {
+        font-family: 'Inter', sans-serif;
+        color: #333;
+        line-height: 1.7;
+        overflow-x: hidden;
+        background-color: #FAFAFA;
+      }
+      
+      .font-display {
+        font-family: 'Space Grotesk', sans-serif;
+      }
+      
+      .section-spacing {
+        padding: 5rem 1rem;
+      }
+      
+      @media (min-width: 640px) {
+        .section-spacing {
+          padding: 6rem 1.5rem;
+        }
+      }
+      
+      @media (min-width: 768px) {
+        .section-spacing {
+          padding: 7rem 2rem;
+        }
+      }
+      
+      @media (min-width: 1024px) {
+        .section-spacing {
+          padding: 8rem 2rem;
+        }
+      }
+      
+      .container-custom {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+      
+      @media (min-width: 640px) {
+        .container-custom {
+          padding: 0 1.5rem;
+        }
+      }
+      
+      @media (min-width: 768px) {
+        .container-custom {
+          padding: 0 2rem;
+        }
+      }
+      
+      .hero-gradient {
+        background: linear-gradient(135deg, #8B0000 0%, #600000 100%);
+      }
+      
+      .btn-primary {
+        background-color: var(--primary);
+        color: white;
+        padding: 0.875rem 2rem;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        border: 2px solid transparent;
+        font-size: 1rem;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+      }
+      
+      @media (min-width: 640px) {
+        .btn-primary {
+          width: auto;
+          padding: 1rem 2.5rem;
+          font-size: 1.05rem;
+        }
+      }
+      
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(139, 0, 0, 0.2);
+        background-color: var(--primary-light);
+      }
+      
+      .btn-primary:active {
+        transform: translateY(-1px);
+      }
+      
+      .btn-secondary {
+        background-color: transparent;
+        color: var(--primary);
+        padding: 0.875rem 2rem;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        border: 2px solid var(--primary);
+        font-size: 1rem;
+        width: 100%;
+      }
+      
+      @media (min-width: 640px) {
+        .btn-secondary {
+          width: auto;
+          padding: 1rem 2.5rem;
+          font-size: 1.05rem;
+        }
+      }
+      
+      .btn-secondary:hover {
+        background-color: var(--primary);
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(139, 0, 0, 0.15);
+      }
+      
+      .card-hover {
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border-radius: 16px;
+        overflow: hidden;
+        background: white;
+        border: 1px solid #F0F0F0;
+      }
+      
+      .card-hover:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
+        border-color: #E0E0E0;
+      }
+      
+      .gradient-text {
+        background: linear-gradient(135deg, #8B0000 0%, #D4AF37 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      
+      .nav-blur {
+        backdrop-filter: blur(12px);
+        background-color: rgba(255, 255, 255, 0.92);
+      }
+      
+      .nav-link {
+        position: relative;
+        color: #555;
+        font-weight: 500;
+        padding: 0.5rem 0;
+        transition: color 0.3s;
+      }
+      
+      .nav-link:hover {
+        color: var(--primary);
+      }
+      
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--primary);
+        transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+      
+      .nav-link:hover::after {
+        width: 100%;
+      }
+      
+      .nav-link.active {
+        color: var(--primary);
+      }
+      
+      .nav-link.active::after {
+        width: 100%;
+      }
+      
+      .section-title {
+        font-size: 2.25rem;
+        font-weight: 800;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+        color: var(--dark);
+      }
+      
+      @media (min-width: 768px) {
+        .section-title {
+          font-size: 3rem;
+        }
+      }
+      
+      @media (min-width: 1024px) {
+        .section-title {
+          font-size: 3.5rem;
+        }
+      }
+      
+      .section-subtitle {
+        font-size: 1.125rem;
+        color: #666;
+        max-width: 700px;
+        margin: 0 auto 3rem;
+      }
+      
+      @media (min-width: 768px) {
+        .section-subtitle {
+          font-size: 1.25rem;
+          margin-bottom: 4rem;
+        }
+      }
+      
+      /* Blog specific styles */
+      .blog-card {
+        height: 100%;
+        transition: all 0.4s;
+      }
+      
+      .blog-image {
+        height: 250px;
+        overflow: hidden;
+        border-radius: 16px 16px 0 0;
+      }
+      
+      .blog-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.8s;
+      }
+      
+      .blog-card:hover .blog-image img {
+        transform: scale(1.1);
+      }
+      
+      .blog-content {
+        padding: 2rem;
+      }
+      
+      .blog-meta {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        color: #666;
+        font-size: 0.875rem;
+      }
+      
+      .blog-meta i {
+        color: var(--primary);
+      }
+      
+      .blog-category {
+        display: inline-block;
+        padding: 0.25rem 1rem;
+        background-color: rgba(139, 0, 0, 0.1);
+        color: var(--primary);
+        border-radius: 50px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+      
+      .blog-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        line-height: 1.3;
+      }
+      
+      .blog-excerpt {
+        color: #666;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+      }
+      
+      .read-more {
+        color: var(--primary);
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: gap 0.3s;
+      }
+      
+      .read-more:hover {
+        gap: 1rem;
+      }
+      
+      /* Featured post */
+      .featured-post {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        height: 500px;
+      }
+      
+      .featured-post img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      .featured-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 3rem;
+        background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+        color: white;
+      }
+      
+      .featured-category {
+        display: inline-block;
+        padding: 0.5rem 1.5rem;
+        background-color: var(--primary);
+        color: white;
+        border-radius: 50px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+      
+      .featured-title {
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+      }
+      
+      @media (min-width: 768px) {
+        .featured-title {
+          font-size: 2.5rem;
+        }
+      }
+      
+      /* Resources section */
+      .resource-card {
+        display: flex;
+        align-items: center;
+        padding: 1.5rem;
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+        transition: all 0.4s;
+        height: 100%;
+      }
+      
+      @media (min-width: 768px) {
+        .resource-card {
+          padding: 2rem;
+        }
+      }
+      
+      .resource-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      }
+      
+      .resource-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 16px;
+        background: linear-gradient(135deg, rgba(139, 0, 0, 0.1) 0%, rgba(212, 175, 55, 0.1) 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1.5rem;
+        flex-shrink: 0;
+      }
+      
+      @media (min-width: 768px) {
+        .resource-icon {
+          width: 70px;
+          height: 70px;
+          margin-right: 2rem;
+        }
+      }
+      
+      .resource-icon i {
+        font-size: 1.5rem;
+        color: var(--primary);
+      }
+      
+      @media (min-width: 768px) {
+        .resource-icon i {
+          font-size: 1.75rem;
+        }
+      }
+      
+      /* Sidebar */
+      .sidebar-widget {
+        background: white;
+        border-radius: 16px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      }
+      
+      .widget-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid #F0F0F0;
+      }
+      
+      .category-list {
+        list-style: none;
+      }
+      
+      .category-list li {
+        margin-bottom: 1rem;
+      }
+      
+      .category-list a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #555;
+        transition: color 0.3s;
+      }
+      
+      .category-list a:hover {
+        color: var(--primary);
+      }
+      
+      .category-count {
+        background-color: #F0F0F0;
+        padding: 0.25rem 0.75rem;
+        border-radius: 50px;
+        font-size: 0.875rem;
+        font-weight: 600;
+      }
+      
+      .tag-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      
+      .tag {
+        padding: 0.5rem 1rem;
+        background-color: #F0F0F0;
+        color: #555;
+        border-radius: 50px;
+        font-size: 0.875rem;
+        transition: all 0.3s;
+      }
+      
+      .tag:hover {
+        background-color: var(--primary);
+        color: white;
+      }
+      
+      .recent-post {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+      }
+      
+      .recent-post img {
+        width: 80px;
+        height: 80px;
+        border-radius: 12px;
+        object-fit: cover;
+        margin-right: 1rem;
+        flex-shrink: 0;
+      }
+      
+      .recent-post-title {
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        line-height: 1.3;
+      }
+      
+      .recent-post-date {
+        color: #666;
+        font-size: 0.875rem;
+      }
+      
+      /* Newsletter */
+      .newsletter-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      @media (min-width: 640px) {
+        .newsletter-form {
+          flex-direction: row;
+        }
+      }
+      
+      .newsletter-input {
+        flex: 1;
+        padding: 1rem;
+        border: 2px solid #E0E0E0;
+        border-radius: 12px;
+        font-size: 1rem;
+        transition: all 0.3s;
+      }
+      
+      .newsletter-input:focus {
+        outline: none;
+        border-color: var(--primary);
+      }
+      
+      /* Pagination */
+      .pagination {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: 4rem;
+      }
+      
+      .page-link {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: white;
+        color: #555;
+        font-weight: 600;
+        transition: all 0.3s;
+      }
+      
+      .page-link:hover, .page-link.active {
+        background-color: var(--primary);
+        color: white;
+      }
+      
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s, transform 0.8s;
+      }
+      
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      .logo-clean {
+        background: transparent !important;
+        box-shadow: none !important;
+      }
+      
+      /* Responsive adjustments */
+      .mobile-stack {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      @media (min-width: 640px) {
+        .mobile-stack {
+          flex-direction: row;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <!-- Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 nav-blur shadow-sm">
+      <div class="container-custom">
+        <div class="flex justify-between items-center py-5">
+          <!-- Logo -->
+          <a href="index.html" class="flex items-center gap-3 md:gap-4">
+            <div class="w-10 h-10 md:w-14 md:h-14 rounded-xl flex items-center justify-center logo-clean">
+              <img src="img/logo.png" alt="ITAUCDN Logo" class="w-8 h-8">
+            </div>
+            <div>
+              <h1 class="text-lg md:text-2xl font-bold text-gray-900 font-display">ITAUCDN</h1>
+              <p class="text-xs text-gray-600">Communities Development Network</p>
+            </div>
+          </a>
+          
+          <!-- Desktop Navigation -->
+          <nav class="hidden lg:flex items-center gap-8">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="index.html#about" class="nav-link">About</a>
+            <a href="index.html#programs" class="nav-link">Programs</a>
+            <a href="index.html#impact" class="nav-link">Impact</a>
+            <a href="index.htmlleadership.html" class="nav-link">Leadership</a>
+            <a href="resources.html" class="nav-link active">Resources</a>
+            <a href="membership.html" class="nav-link">Membership</a>
+            <a href="index.html#contact" class="btn-primary text-sm md:text-base">
+              <i class="fas fa-envelope"></i> Contact Us
+            </a>
+          </nav>
+          
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-button" class="lg:hidden text-gray-700">
+            <i class="fas fa-bars text-xl md:text-2xl"></i>
+          </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-white border-t mt-2 py-6 px-4 rounded-xl shadow-xl">
+          <div class="flex flex-col gap-6">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="index.html#about" class="nav-link">About</a>
+            <a href="index.html#programs" class="nav-link">Programs</a>
+            <a href="index.html#impact" class="nav-link">Impact</a>
+            <a href="index.htmlleadership.html" class="nav-link">Leadership</a>
+            <a href="resources.html" class="nav-link active">Resources & Blog</a>
+            <a href="membership.html" class="nav-link">Membership</a>
+            <a href="index.html#contact" class="btn-primary w-full">
+              <i class="fas fa-envelope"></i> Contact Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-r from-[#8B0000] to-[#600000] relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-0 left-0 w-64 h-64 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-64 h-64 bg-white rounded-full translate-x-1/2 translate-y-1/2"></div>
+      </div>
+      
+      <div class="container-custom relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="inline-flex items-center gap-3 mb-6 px-4 py-2 bg-white/20 rounded-full backdrop-blur-sm">
+            <span class="w-2 h-2 bg-white rounded-full"></span>
+            <span class="text-white font-semibold text-sm md:text-base">KNOWLEDGE HUB</span>
+          </div>
+          
+          <h1 class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 font-display leading-tight">
+            Resources & <span class="text-[#D4AF37]">Blog</span>
+          </h1>
+          
+          <p class="text-lg md:text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+            Insights, stories, and resources from our community development journey in Akpautong–Urua Okok communities.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#blog" class="btn-primary bg-white text-[#8B0000] hover:bg-gray-100">
+              <i class="fas fa-newspaper"></i> Read Blog Posts
+            </a>
+            <a href="#resources" class="btn-secondary border-white text-white hover:bg-white hover:text-[#8B0000]">
+              <i class="fas fa-download"></i> Download Resources
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Post -->
+    <section class="py-12 md:py-20 bg-white">
+      <div class="container-custom">
+        <div class="mb-12 md:mb-16">
+          <h2 class="section-title text-center">Featured <span class="gradient-text">Story</span></h2>
+          <p class="section-subtitle text-center">Highlighting impactful community development initiatives</p>
+        </div>
+        
+        <div class="featured-post fade-in">
+          <img src="https://images.unsplash.com/photo-1591115765373-5207764f72e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Community water project celebration">
+          <div class="featured-overlay">
+            <span class="featured-category">Water & Sanitation</span>
+            <h2 class="featured-title">Clean Water Project Transforms Lives in Akpautong Community</h2>
+            <div class="flex items-center gap-6 text-white/90">
+              <span class="flex items-center gap-2">
+                <i class="fas fa-calendar"></i> March 15, 2024
+              </span>
+              <span class="flex items-center gap-2">
+                <i class="fas fa-user"></i> By Engr. Emmanuel Akpekong Sam
+              </span>
+              <span class="flex items-center gap-2">
+                <i class="fas fa-clock"></i> 5 min read
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Posts -->
+    <section id="blog" class="py-12 md:py-20 bg-gray-50">
+      <div class="container-custom">
+        <div class="text-center mb-12 md:mb-16">
+          <h2 class="section-title">Latest <span class="gradient-text">Articles</span></h2>
+          <p class="section-subtitle">Insights and updates from our community development work</p>
+        </div>
+        
+        <div class="grid lg:grid-cols-3 gap-8">
+          <!-- Main Content -->
+          <div class="lg:col-span-2">
+            <div class="grid md:grid-cols-2 gap-8">
+              <!-- Blog Post 1 -->
+              <article class="card-hover blog-card fade-in">
+                <div class="blog-image">
+                  <img src="https://images.unsplash.com/photo-1579085287466-55ecb8c0d0f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Youth empowerment workshop">
+                </div>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <span class="flex items-center gap-2">
+                      <i class="fas fa-calendar"></i> April 2, 2024
+                    </span>
+                    <span class="flex items-center gap-2">
+                      <i class="fas fa-comment"></i> 12 Comments
+                    </span>
+                  </div>
+                  <span class="blog-category">Youth Empowerment</span>
+                  <h3 class="blog-title">Empowering Young Leaders: ITAUCDN's Youth Entrepreneurship Program</h3>
+                  <p class="blog-excerpt">How our youth-focused initiatives are creating sustainable livelihoods and developing future community leaders.</p>
+                  <a href="#" class="read-more">
+                    Read Article <i class="fas fa-arrow-right"></i>
+                  </a>
+                </div>
+              </article>
+              
+              <!-- Blog Post 2 -->
+              <article class="card-hover blog-card fade-in">
+                <div class="blog-image">
+                  <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Community farming cooperative">
+                </div>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <span class="flex items-center gap-2">
+                      <i class="fas fa-calendar"></i> March 28, 2024
+                    </span>
+                    <span class="flex items-center gap-2">
+                      <i class="fas fa-comment"></i> 8 Comments
+                    </span>
+                  </div>
+                  <span class="blog-category">Agriculture</span>
+                  <h3 class="blog-title">Sustainable Agriculture: Transforming Community Food Security</h3>
+                  <p class="blog-excerpt">The success story of our agricultural cooperative and its impact on local food production and economic empowerment.</p>
+                  <a href="#" class="read-more">
+                    Read Article <i class="fas fa-arrow-right"></i>
+                  </a>
+                </div>
+              </article>
+              
+              <!-- Blog Post 3 -->
+              <article class="card-hover blog-card fade-in">
+                <div class="blog-image">
+                  <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Women's empowerment meeting">
+                </div>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <span class="flex items-center gap-2">
+                      <i class="fas fa-calendar"></i> March 22, 2024
+                    </span>
+                    <span class="flex items-center gap-2">
+                      <i class="fas fa-comment"></i> 15 Comments
+                    </span>
+                  </div>
+                  <span class="blog-category">Women Empowerment</span>
+                  <h3 class="blog-title">Women in Development: Breaking Barriers in Community Leadership</h3>
+                  <p class="blog-excerpt">Celebrating the achievements of women leaders driving change in Akpautong–Urua Okok communities.</p>
+                  <a href="#" class="read-more">
+                    Read Article <i class="fas fa-arrow-right"></i>
+                  </a>
+                </div>
+              </article>
+              
+              <!-- Blog Post 4 -->
+              <article class="card-hover blog-card fade-in">
+                <div class="blog-image">
+                  <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Education project">
+                </div>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <span class="flex items-center gap-2">
+                      <i class="fas fa-calendar"></i> March 18, 2024
+                    </span>
+                    <span class="flex items-center gap-2">
+                      <i class="fas fa-comment"></i> 6 Comments
+                    </span>
+                  </div>
+                  <span class="blog-category">Education</span>
+                  <h3 class="blog-title">Building Futures: ITAUCDN's Scholarship Program Impact Report</h3>
+                  <p class="blog-excerpt">How our educational initiatives are creating opportunities for academic excellence and skill development.</p>
+                  <a href="#" class="read-more">
+                    Read Article <i class="fas fa-arrow-right"></i>
+                  </a>
+                </div>
+              </article>
+              
+              <!-- Blog Post 5 -->
+              <article class="card-hover blog-card fade-in">
+                <div class="blog-image">
+                  <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Community meeting">
+                </div>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <span class="flex items-center gap-2">
+                      <i class="fas fa-calendar"></i> March 12, 2024
+                    </span>
+                    <span class="flex items-center gap-2">
+                      <i class="fas fa-comment"></i> 10 Comments
+                    </span>
+                  </div>
+                  <span class="blog-category">Governance</span>
+                  <h3 class="blog-title">Transparent Governance: Lessons from ITAUCDN's Leadership Model</h3>
+                  <p class="blog-excerpt">How our governance structure ensures accountability and community participation in decision-making.</p>
+                  <a href="#" class="read-more">
+                    Read Article <i class="fas fa-arrow-right"></i>
+                  </a>
+                </div>
+              </article>
+              
+              <!-- Blog Post 6 -->
+              <article class="card-hover blog-card fade-in">
+                <div class="blog-image">
+                  <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Health outreach program">
+                </div>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <span class="flex items-center gap-2">
+                      <i class="fas fa-calendar"></i> March 8, 2024
+                    </span>
+                    <span class="flex items-center gap-2">
+                      <i class="fas fa-comment"></i> 7 Comments
+                    </span>
+                  </div>
+                  <span class="blog-category">Health & Wellness</span>
+                  <h3 class="blog-title">Community Health Initiative: Improving Access to Healthcare Services</h3>
+                  <p class="blog-excerpt">Our comprehensive approach to addressing healthcare challenges and promoting wellness in the community.</p>
+                  <a href="#" class="read-more">
+                    Read Article <i class="fas fa-arrow-right"></i>
+                  </a>
+                </div>
+              </article>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination">
+              <a href="#" class="page-link active">1</a>
+              <a href="#" class="page-link">2</a>
+              <a href="#" class="page-link">3</a>
+              <a href="#" class="page-link">4</a>
+              <a href="#" class="page-link">
+                <i class="fas fa-chevron-right"></i>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Sidebar -->
+          <div class="lg:col-span-1">
+            <!-- Search Widget -->
+            <div class="sidebar-widget fade-in">
+              <h3 class="widget-title">Search Articles</h3>
+              <div class="relative">
+                <input type="text" placeholder="Search resources..." class="w-full p-4 border border-gray-300 rounded-xl focus:outline-none focus:border-[#8B0000]">
+                <button class="absolute right-4 top-4 text-gray-400">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </div>
+            
+            <!-- Categories Widget -->
+            <div class="sidebar-widget fade-in">
+              <h3 class="widget-title">Categories</h3>
+              <ul class="category-list">
+                <li>
+                  <a href="#">
+                    <span>Community Infrastructure</span>
+                    <span class="category-count">12</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span>Water & Sanitation</span>
+                    <span class="category-count">8</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span>Education & Training</span>
+                    <span class="category-count">15</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span>Economic Empowerment</span>
+                    <span class="category-count">10</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span>Health & Social Welfare</span>
+                    <span class="category-count">7</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span>Peacebuilding & Advocacy</span>
+                    <span class="category-count">5</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span>Youth Development</span>
+                    <span class="category-count">9</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span>Women Empowerment</span>
+                    <span class="category-count">6</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            
+            <!-- Recent Posts Widget -->
+            <div class="sidebar-widget fade-in">
+              <h3 class="widget-title">Recent Posts</h3>
+              <div class="recent-post">
+                <img src="https://images.unsplash.com/photo-1579085287466-55ecb8c0d0f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Youth empowerment">
+                <div>
+                  <h4 class="recent-post-title">Youth Entrepreneurship Program Success</h4>
+                  <div class="recent-post-date">April 2, 2024</div>
+                </div>
+              </div>
+              <div class="recent-post">
+                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Women's meeting">
+                <div>
+                  <h4 class="recent-post-title">Women Breaking Barriers in Leadership</h4>
+                  <div class="recent-post-date">March 22, 2024</div>
+                </div>
+              </div>
+              <div class="recent-post">
+                <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Health outreach">
+                <div>
+                  <h4 class="recent-post-title">Community Health Initiative Update</h4>
+                  <div class="recent-post-date">March 8, 2024</div>
+                </div>
+              </div>
+              <div class="recent-post">
+                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Community meeting">
+                <div>
+                  <h4 class="recent-post-title">Transparent Governance Model</h4>
+                  <div class="recent-post-date">March 12, 2024</div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Tags Widget -->
+            <div class="sidebar-widget fade-in">
+              <h3 class="widget-title">Popular Tags</h3>
+              <div class="tag-list">
+                <a href="#" class="tag">Development</a>
+                <a href="#" class="tag">Community</a>
+                <a href="#" class="tag">Empowerment</a>
+                <a href="#" class="tag">Sustainability</a>
+                <a href="#" class="tag">Leadership</a>
+                <a href="#" class="tag">Education</a>
+                <a href="#" class="tag">Agriculture</a>
+                <a href="#" class="tag">Health</a>
+                <a href="#" class="tag">Youth</a>
+                <a href="#" class="tag">Women</a>
+              </div>
+            </div>
+            
+            <!-- Newsletter Widget -->
+            <div class="sidebar-widget fade-in">
+              <h3 class="widget-title">Newsletter</h3>
+              <p class="text-gray-600 mb-4">Subscribe to get updates on new articles and resources.</p>
+              <form class="newsletter-form">
+                <input type="email" placeholder="Your email" class="newsletter-input" required>
+                <button type="submit" class="btn-primary">
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="py-12 md:py-20 bg-white">
+      <div class="container-custom">
+        <div class="text-center mb-12 md:mb-16">
+          <h2 class="section-title">Downloadable <span class="gradient-text">Resources</span></h2>
+          <p class="section-subtitle">Official documents, reports, and educational materials</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12 md:mb-16">
+          <!-- Resource 1 -->
+          <div class="resource-card fade-in">
+            <div class="resource-icon">
+              <i class="fas fa-file-contract"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-2">ITAUCDN Constitution</h3>
+              <p class="text-gray-600 mb-4 text-sm">Official governing document outlining structure and mandate</p>
+              <a href="#" class="btn-secondary py-2 px-4 text-sm">
+                <i class="fas fa-download"></i> Download PDF
+              </a>
+            </div>
+          </div>
+          
+          <!-- Resource 2 -->
+          <div class="resource-card fade-in">
+            <div class="resource-icon">
+              <i class="fas fa-file-alt"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-2">2023 Annual Report</h3>
+              <p class="text-gray-600 mb-4 text-sm">Comprehensive report of activities and achievements</p>
+              <a href="#" class="btn-secondary py-2 px-4 text-sm">
+                <i class="fas fa-download"></i> Download PDF
+              </a>
+            </div>
+          </div>
+          
+          <!-- Resource 3 -->
+          <div class="resource-card fade-in">
+            <div class="resource-icon">
+              <i class="fas fa-file-invoice-dollar"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-2">Financial Audit 2023</h3>
+              <p class="text-gray-600 mb-4 text-sm">Independent financial audit and accountability report</p>
+              <a href="#" class="btn-secondary py-2 px-4 text-sm">
+                <i class="fas fa-download"></i> Download PDF
+              </a>
+            </div>
+          </div>
+          
+          <!-- Resource 4 -->
+          <div class="resource-card fade-in">
+            <div class="resource-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-2">Impact Assessment Report</h3>
+              <p class="text-gray-600 mb-4 text-sm">Detailed assessment of community development impact</p>
+              <a href="#" class="btn-secondary py-2 px-4 text-sm">
+                <i class="fas fa-download"></i> Download PDF
+              </a>
+            </div>
+          </div>
+          
+          <!-- Resource 5 -->
+          <div class="resource-card fade-in">
+            <div class="resource-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-2">Membership Handbook</h3>
+              <p class="text-gray-600 mb-4 text-sm">Complete guide for ITAUCDN members</p>
+              <a href="#" class="btn-secondary py-2 px-4 text-sm">
+                <i class="fas fa-download"></i> Download PDF
+              </a>
+            </div>
+          </div>
+          
+          <!-- Resource 6 -->
+          <div class="resource-card fade-in">
+            <div class="resource-icon">
+              <i class="fas fa-project-diagram"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-2">Project Portfolio</h3>
+              <p class="text-gray-600 mb-4 text-sm">Catalog of completed and ongoing projects</p>
+              <a href="#" class="btn-secondary py-2 px-4 text-sm">
+                <i class="fas fa-download"></i> Download PDF
+              </a>
+            </div>
+          </div>
+          
+          <!-- Resource 7 -->
+          <div class="resource-card fade-in">
+            <div class="resource-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-2">Training Manuals</h3>
+              <p class="text-gray-600 mb-4 text-sm">Capacity building and skills development guides</p>
+              <a href="#" class="btn-secondary py-2 px-4 text-sm">
+                <i class="fas fa-download"></i> Download ZIP
+              </a>
+            </div>
+          </div>
+          
+          <!-- Resource 8 -->
+          <div class="resource-card fade-in">
+            <div class="resource-icon">
+              <i class="fas fa-camera"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-2">Photo Gallery Archive</h3>
+              <p class="text-gray-600 mb-4 text-sm">High-resolution project and event photos</p>
+              <a href="#" class="btn-secondary py-2 px-4 text-sm">
+                <i class="fas fa-download"></i> Download ZIP
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center">
+          <a href="#" class="btn-primary">
+            <i class="fas fa-folder-open"></i> View All Resources
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Resources -->
+    <section class="py-12 md:py-20 bg-gray-50">
+      <div class="container-custom">
+        <div class="text-center mb-12 md:mb-16">
+          <h2 class="section-title">Video <span class="gradient-text">Resources</span></h2>
+          <p class="section-subtitle">Watch our community development stories come to life</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Video 1 -->
+          <div class="card-hover fade-in">
+            <div class="relative overflow-hidden rounded-t-2xl">
+              <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=1469&q=80" alt="Community meeting video" class="w-full h-64 object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                <div class="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                  <i class="fas fa-play text-white text-2xl"></i>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <span class="blog-category">Documentary</span>
+              <h3 class="blog-title">Our Community Journey</h3>
+              <p class="blog-excerpt">A documentary showcasing 5 years of community development in Akpautong–Urua Okok.</p>
+              <div class="flex items-center justify-between mt-4">
+                <span class="text-sm text-gray-500">15:42 min</span>
+                <a href="#" class="text-[#8B0000] font-semibold">
+                  <i class="fas fa-play-circle mr-2"></i> Watch Now
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Video 2 -->
+          <div class="card-hover fade-in">
+            <div class="relative overflow-hidden rounded-t-2xl">
+              <img src="https://images.unsplash.com/photo-1579085287466-55ecb8c0d0f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1469&q=80" alt="Youth training video" class="w-full h-64 object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                <div class="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                  <i class="fas fa-play text-white text-2xl"></i>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <span class="blog-category">Training</span>
+              <h3 class="blog-title">Youth Skills Development</h3>
+              <p class="blog-excerpt">Workshop series on entrepreneurship and digital skills for young community members.</p>
+              <div class="flex items-center justify-between mt-4">
+                <span class="text-sm text-gray-500">22:18 min</span>
+                <a href="#" class="text-[#8B0000] font-semibold">
+                  <i class="fas fa-play-circle mr-2"></i> Watch Now
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Video 3 -->
+          <div class="card-hover fade-in">
+            <div class="relative overflow-hidden rounded-t-2xl">
+              <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w-1469&q=80" alt="Agriculture project video" class="w-full h-64 object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                <div class="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                  <i class="fas fa-play text-white text-2xl"></i>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <span class="blog-category">Agriculture</span>
+              <h3 class="blog-title">Sustainable Farming Methods</h3>
+              <p class="blog-excerpt">Training video on modern agricultural techniques for improved food security.</p>
+              <div class="flex items-center justify-between mt-4">
+                <span class="text-sm text-gray-500">18:35 min</span>
+                <a href="#" class="text-[#8B0000] font-semibold">
+                  <i class="fas fa-play-circle mr-2"></i> Watch Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center mt-12">
+          <a href="#" class="btn-secondary">
+            <i class="fab fa-youtube"></i> Visit Our YouTube Channel
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-12 md:py-20 bg-gradient-to-r from-[#8B0000] to-[#600000] relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-0 left-0 w-64 h-64 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-64 h-64 bg-white rounded-full translate-x-1/2 translate-y-1/2"></div>
+      </div>
+      
+      <div class="container-custom relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-display">
+            Share Your <span class="text-[#D4AF37]">Community Story</span>
+          </h2>
+          
+          <p class="text-lg md:text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+            Do you have a community development story or insight to share? Contribute to our blog and inspire others.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#" class="btn-primary bg-white text-[#8B0000] hover:bg-gray-100">
+              <i class="fas fa-pen-alt"></i> Submit Article
+            </a>
+            <a href="index.html#contact" class="btn-secondary border-white text-white hover:bg-white hover:text-[#8B0000]">
+              <i class="fas fa-envelope"></i> Contact Editor
+            </a>
+          </div>
+          
+          <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">
+            <div class="text-center">
+              <div class="text-3xl md:text-4xl font-bold text-white mb-2">85+</div>
+              <div class="text-white/80">Articles Published</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl md:text-4xl font-bold text-white mb-2">25K+</div>
+              <div class="text-white/80">Monthly Readers</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl md:text-4xl font-bold text-white mb-2">50+</div>
+              <div class="text-white/80">Resource Downloads</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 md:py-16 bg-gray-900 text-white">
+      <div class="container-custom">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-8 md:mb-12">
+          <div>
+            <!-- Footer logo -->
+            <div class="flex items-center gap-3 md:gap-4 mb-6 md:mb-8">
+              <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center">
+                <img src="img/logo.png" alt="ITAUCDN Logo" class="w-6 h-6 md:w-8 md:h-8">
+              </div>
+              <div>
+                <h3 class="text-xl md:text-2xl font-bold font-display">ITAUCDN</h3>
+                <p class="text-xs text-gray-400">Communities Development Network</p>
+              </div>
+            </div>
+            
+            <p class="text-gray-400 mb-6 md:mb-8 text-sm md:text-base">
+              Building united, progressive, and self-sustaining communities through inclusive development and shared responsibility.
+            </p>
+            
+            <div class="flex gap-3 md:gap-4">
+              <a href="#" class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#8B0000] transition-colors">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#8B0000] transition-colors">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#8B0000] transition-colors">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#8B0000] transition-colors">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+          
+          <div>
+            <h4 class="text-lg md:text-xl font-bold mb-6 md:mb-8">Quick Links</h4>
+            <ul class="space-y-3 md:space-y-4">
+              <li><a href="index.html" class="text-gray-400 hover:text-white transition text-sm md:text-base">Home</a></li>
+              <li><a href="index.html#about" class="text-gray-400 hover:text-white transition text-sm md:text-base">About Us</a></li>
+              <li><a href="index.html#programs" class="text-gray-400 hover:text-white transition text-sm md:text-base">Programs</a></li>
+              <li><a href="resources.html" class="text-gray-400 hover:text-white transition text-sm md:text-base">Resources & Blog</a></li>
+              <li><a href="membership.html" class="text-gray-400 hover:text-white transition text-sm md:text-base">Membership</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-lg md:text-xl font-bold mb-6 md:mb-8">Categories</h4>
+            <ul class="space-y-3 md:space-y-4">
+              <li><a href="#" class="text-gray-400 hover:text-white transition text-sm md:text-base">Community Infrastructure</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition text-sm md:text-base">Education & Training</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition text-sm md:text-base">Economic Empowerment</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition text-sm md:text-base">Health & Wellness</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition text-sm md:text-base">Youth Development</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-lg md:text-xl font-bold mb-6 md:mb-8">Contact</h4>
+            <ul class="space-y-3 md:space-y-4">
+              <li class="text-gray-400 text-sm md:text-base">Esit Eket LGA, Akwa Ibom</li>
+              <li class="text-gray-400 text-sm md:text-base">blog@itaucdn.com</li>
+              <li class="text-gray-400 text-sm md:text-base">+234 802 327 4698</li>
+              <li class="text-gray-400 text-sm md:text-base">Mon - Fri: 9AM - 5PM</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="border-t border-gray-800 pt-6 md:pt-8 text-center">
+          <p class="text-gray-500 text-sm md:text-base">
+            &copy; <span id="currentYear"></span> Incorporated Trustee of Akpautong Urua Okok Communities Development Network (ITAUCDN). All rights reserved.
+          </p>
+          <p class="text-gray-500 mt-2 text-xs md:text-sm">
+            A non-profit, non-political community development institution registered under the Companies and Allied Matters Act (CAMA).
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+      
+      // Set current year in footer
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+      
+      // Newsletter form submission
+      const newsletterForms = document.querySelectorAll('.newsletter-form');
+      
+      newsletterForms.forEach(form => {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const emailInput = form.querySelector('input[type="email"]');
+          
+          if (emailInput.value) {
+            alert('Thank you for subscribing to our newsletter! You will receive updates on new articles and resources.');
+            emailInput.value = '';
+          }
+        });
+      });
+      
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href === '#') return;
+          
+          e.preventDefault();
+          const targetElement = document.querySelector(href);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+            
+            // Close mobile menu if open
+            mobileMenu.classList.add('hidden');
+            
+            // Update active nav link
+            document.querySelectorAll('.nav-link').forEach(link => {
+              link.classList.remove('active');
+            });
+            this.classList.add('active');
+          }
+        });
+      });
+      
+      // Scroll animations
+      const fadeElements = document.querySelectorAll('.fade-in');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+      });
+      
+      fadeElements.forEach(element => {
+        observer.observe(element);
+      });
+      
+      // Update active nav link on scroll
+      window.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('section[id]');
+        const scrollPosition = window.scrollY + 100;
+        
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          const sectionId = section.getAttribute('id');
+          
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            document.querySelectorAll('.nav-link').forEach(link => {
+              link.classList.remove('active');
+              if (link.getAttribute('href') === `#${sectionId}`) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
+        
+        // Navbar background on scroll
+        const nav = document.querySelector('header');
+        if (window.scrollY > 50) {
+          nav.classList.add('shadow-lg');
+        } else {
+          nav.classList.remove('shadow-lg');
+        }
+      });
+      
+      // Search functionality
+      const searchInput = document.querySelector('input[placeholder="Search resources..."]');
+      const searchButton = searchInput?.nextElementSibling;
+      
+      if (searchButton) {
+        searchButton.addEventListener('click', () => {
+          if (searchInput.value.trim()) {
+            alert(`Searching for: "${searchInput.value}"\n\nThis search feature would display relevant articles and resources in a real implementation.`);
+            searchInput.value = '';
+          }
+        });
+        
+        searchInput.addEventListener('keypress', (e) => {
+          if (e.key === 'Enter' && searchInput.value.trim()) {
+            alert(`Searching for: "${searchInput.value}"\n\nThis search feature would display relevant articles and resources in a real implementation.`);
+            searchInput.value = '';
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

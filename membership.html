@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="icon" href="img/logo-1.png" type="image/x-icon">
+    <title>Become a Member - ITAUCDN</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root {
+        --primary: #8B0000;
+        --primary-light: #A52A2A;
+        --secondary: #D4AF37;
+        --accent: #0A2472;
+        --light: #F8F9FA;
+        --dark: #121212;
+      }
+      
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      body {
+        font-family: 'Inter', sans-serif;
+        color: #333;
+        line-height: 1.7;
+        overflow-x: hidden;
+        background-color: #FAFAFA;
+      }
+      
+      .font-display {
+        font-family: 'Space Grotesk', sans-serif;
+      }
+      
+      .section-spacing {
+        padding: 5rem 1rem;
+      }
+      
+      @media (min-width: 640px) {
+        .section-spacing {
+          padding: 6rem 1.5rem;
+        }
+      }
+      
+      @media (min-width: 768px) {
+        .section-spacing {
+          padding: 7rem 2rem;
+        }
+      }
+      
+      @media (min-width: 1024px) {
+        .section-spacing {
+          padding: 8rem 2rem;
+        }
+      }
+      
+      .container-custom {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+      
+      @media (min-width: 640px) {
+        .container-custom {
+          padding: 0 1.5rem;
+        }
+      }
+      
+      @media (min-width: 768px) {
+        .container-custom {
+          padding: 0 2rem;
+        }
+      }
+      
+      .hero-gradient {
+        background: linear-gradient(135deg, #8B0000 0%, #600000 100%);
+      }
+      
+      .btn-primary {
+        background-color: var(--primary);
+        color: white;
+        padding: 0.875rem 2rem;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        border: 2px solid transparent;
+        font-size: 1rem;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+      }
+      
+      @media (min-width: 640px) {
+        .btn-primary {
+          width: auto;
+          padding: 1rem 2.5rem;
+          font-size: 1.05rem;
+        }
+      }
+      
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(139, 0, 0, 0.2);
+        background-color: var(--primary-light);
+      }
+      
+      .btn-primary:active {
+        transform: translateY(-1px);
+      }
+      
+      .btn-secondary {
+        background-color: transparent;
+        color: var(--primary);
+        padding: 0.875rem 2rem;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        border: 2px solid var(--primary);
+        font-size: 1rem;
+        width: 100%;
+      }
+      
+      @media (min-width: 640px) {
+        .btn-secondary {
+          width: auto;
+          padding: 1rem 2.5rem;
+          font-size: 1.05rem;
+        }
+      }
+      
+      .btn-secondary:hover {
+        background-color: var(--primary);
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(139, 0, 0, 0.15);
+      }
+      
+      .card-hover {
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border-radius: 16px;
+        overflow: hidden;
+        background: white;
+        border: 1px solid #F0F0F0;
+      }
+      
+      .card-hover:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
+        border-color: #E0E0E0;
+      }
+      
+      .gradient-text {
+        background: linear-gradient(135deg, #8B0000 0%, #D4AF37 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      
+      .nav-blur {
+        backdrop-filter: blur(12px);
+        background-color: rgba(255, 255, 255, 0.92);
+      }
+      
+      .nav-link {
+        position: relative;
+        color: #555;
+        font-weight: 500;
+        padding: 0.5rem 0;
+        transition: color 0.3s;
+      }
+      
+      .nav-link:hover {
+        color: var(--primary);
+      }
+      
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--primary);
+        transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+      
+      .nav-link:hover::after {
+        width: 100%;
+      }
+      
+      .nav-link.active {
+        color: var(--primary);
+      }
+      
+      .nav-link.active::after {
+        width: 100%;
+      }
+      
+      .section-title {
+        font-size: 2.25rem;
+        font-weight: 800;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+        color: var(--dark);
+      }
+      
+      @media (min-width: 768px) {
+        .section-title {
+          font-size: 3rem;
+        }
+      }
+      
+      @media (min-width: 1024px) {
+        .section-title {
+          font-size: 3.5rem;
+        }
+      }
+      
+      .section-subtitle {
+        font-size: 1.125rem;
+        color: #666;
+        max-width: 700px;
+        margin: 0 auto 3rem;
+      }
+      
+      @media (min-width: 768px) {
+        .section-subtitle {
+          font-size: 1.25rem;
+          margin-bottom: 4rem;
+        }
+      }
+      
+      .membership-card {
+        border-radius: 20px;
+        overflow: hidden;
+        background: white;
+        border: 2px solid #E0E0E0;
+        transition: all 0.4s;
+        height: 100%;
+      }
+      
+      .membership-card.featured {
+        border-color: var(--secondary);
+        transform: scale(1.05);
+        box-shadow: 0 25px 50px rgba(212, 175, 55, 0.15);
+      }
+      
+      .membership-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+      }
+      
+      .membership-card.featured:hover {
+        transform: translateY(-10px) scale(1.05);
+      }
+      
+      .membership-header {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+        padding: 2.5rem 2rem;
+        text-align: center;
+        color: white;
+      }
+      
+      .membership-header.featured {
+        background: linear-gradient(135deg, var(--secondary) 0%, #E6C158 100%);
+      }
+      
+      .membership-price {
+        font-size: 3.5rem;
+        font-weight: 800;
+        line-height: 1;
+        margin: 1rem 0;
+      }
+      
+      .membership-price span {
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+      
+      .membership-features {
+        padding: 2.5rem 2rem;
+      }
+      
+      .feature-list {
+        list-style: none;
+        margin-bottom: 2rem;
+      }
+      
+      .feature-list li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        color: #555;
+      }
+      
+      .feature-list li i {
+        color: var(--primary);
+        margin-right: 1rem;
+        font-size: 1.25rem;
+      }
+      
+      .feature-list.featured li i {
+        color: var(--secondary);
+      }
+      
+      .feature-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 16px;
+        background: linear-gradient(135deg, rgba(139, 0, 0, 0.1) 0%, rgba(212, 175, 55, 0.1) 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+      }
+      
+      .feature-icon i {
+        font-size: 1.75rem;
+        color: var(--primary);
+      }
+      
+      .process-step {
+        position: relative;
+        text-align: center;
+        padding: 0 1rem;
+      }
+      
+      .step-number {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 0 auto 1.5rem;
+        z-index: 2;
+        position: relative;
+      }
+      
+      .process-step:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 30px;
+        left: 50%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, var(--primary) 0%, transparent 100%);
+        z-index: 1;
+      }
+      
+      .form-input {
+        width: 100%;
+        padding: 1rem 1.25rem;
+        border: 2px solid #E0E0E0;
+        border-radius: 12px;
+        font-size: 1rem;
+        transition: all 0.3s;
+        background: white;
+      }
+      
+      @media (min-width: 768px) {
+        .form-input {
+          padding: 1.25rem 1.5rem;
+        }
+      }
+      
+      .form-input:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.1);
+      }
+      
+      .form-label {
+        display: block;
+        margin-bottom: 0.75rem;
+        font-weight: 600;
+        color: #444;
+      }
+      
+      .form-select {
+        width: 100%;
+        padding: 1rem 1.25rem;
+        border: 2px solid #E0E0E0;
+        border-radius: 12px;
+        font-size: 1rem;
+        transition: all 0.3s;
+        background: white;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%238B0000'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 1rem center;
+        background-size: 1.5rem;
+      }
+      
+      .form-select:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.1);
+      }
+      
+      .form-checkbox {
+        width: 20px;
+        height: 20px;
+        border: 2px solid #E0E0E0;
+        border-radius: 4px;
+        margin-right: 0.75rem;
+        cursor: pointer;
+      }
+      
+      .form-checkbox:checked {
+        background-color: var(--primary);
+        border-color: var(--primary);
+      }
+      
+      .faq-item {
+        border-bottom: 1px solid #E0E0E0;
+        padding-bottom: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      .faq-question {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--dark);
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        color: #666;
+        line-height: 1.6;
+      }
+      
+      .faq-answer.open {
+        max-height: 500px;
+        margin-top: 1rem;
+      }
+      
+      .faq-toggle {
+        color: var(--primary);
+        font-size: 1.5rem;
+        transition: transform 0.3s;
+      }
+      
+      .faq-toggle.open {
+        transform: rotate(45deg);
+      }
+      
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s, transform 0.8s;
+      }
+      
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      .logo-clean {
+        background: transparent !important;
+        box-shadow: none !important;
+      }
+      
+      /* Responsive adjustments */
+      .mobile-stack {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      @media (min-width: 640px) {
+        .mobile-stack {
+          flex-direction: row;
+        }
+      }
+      
+      .stat-grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1.5rem;
+      }
+      
+      @media (min-width: 640px) {
+        .stat-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      
+      @media (min-width: 1024px) {
+        .stat-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <!-- Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 nav-blur shadow-sm">
+      <div class="container-custom">
+        <div class="flex justify-between items-center py-5">
+          <!-- Logo -->
+          <a href="index.html" class="flex items-center gap-3 md:gap-4">
+            <div class="w-10 h-10 md:w-14 md:h-14 rounded-xl flex items-center justify-center logo-clean">
+              <img src="img/logo.png" alt="ITAUCDN Logo" class="w-8 h-8">
+            </div>
+            <div>
+              <h1 class="text-lg md:text-2xl font-bold text-gray-900 font-display">ITAUCDN</h1>
+              <p class="text-xs text-gray-600">Communities Development Network</p>
+            </div>
+          </a>
+          
+          <!-- Desktop Navigation -->
+          <nav class="hidden lg:flex items-center gap-8">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="index.html#about" class="nav-link">About</a>
+            <a href="index.html#programs" class="nav-link">Programs</a>
+            <a href="index.html#impact" class="nav-link">Impact</a>
+            <a href="index.htmlleadership.html" class="nav-link">Leadership</a>
+            <a href="index.html#resources" class="nav-link">Resources</a>
+            <a href="#membership" class="nav-link active">Membership</a>
+            <a href="index.html#contact" class="btn-primary text-sm md:text-base">
+              <i class="fas fa-envelope"></i> Contact Us
+            </a>
+          </nav>
+          
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-button" class="lg:hidden text-gray-700">
+            <i class="fas fa-bars text-xl md:text-2xl"></i>
+          </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-white border-t mt-2 py-6 px-4 rounded-xl shadow-xl">
+          <div class="flex flex-col gap-6">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="index.html#about" class="nav-link">About</a>
+            <a href="index.html#programs" class="nav-link">Programs</a>
+            <a href="index.html#impact" class="nav-link">Impact</a>
+            <a href="index.htmlleadership.html" class="nav-link">Leadership</a>
+            <a href="index.html#resources" class="nav-link">Resources</a>
+            <a href="#membership" class="nav-link active">Membership</a>
+            <a href="index.html#contact" class="btn-primary w-full">
+              <i class="fas fa-envelope"></i> Contact Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="membership" class="pt-32 pb-20 bg-gradient-to-r from-[#8B0000] to-[#600000] relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-0 left-0 w-64 h-64 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-64 h-64 bg-white rounded-full translate-x-1/2 translate-y-1/2"></div>
+      </div>
+      
+      <div class="container-custom relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="inline-flex items-center gap-3 mb-6 px-4 py-2 bg-white/20 rounded-full backdrop-blur-sm">
+            <span class="w-2 h-2 bg-white rounded-full"></span>
+            <span class="text-white font-semibold text-sm md:text-base">JOIN OUR COMMUNITY</span>
+          </div>
+          
+          <h1 class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 font-display leading-tight">
+            Become a <span class="text-[#D4AF37]">Member</span> of ITAUCDN
+          </h1>
+          
+          <p class="text-lg md:text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+            Join our growing community of dedicated individuals working together to build sustainable, progressive, and self-sustaining Akpautong–Urua Okok communities.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#registration" class="btn-primary bg-white text-[#8B0000] hover:bg-gray-100">
+              <i class="fas fa-user-plus"></i> Register Now
+            </a>
+            <a href="#benefits" class="btn-secondary border-white text-white hover:bg-white hover:text-[#8B0000]">
+              <i class="fas fa-star"></i> View Benefits
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Membership Benefits -->
+    <section id="benefits" class="section-spacing bg-white">
+      <div class="container-custom">
+        <div class="text-center mb-12 md:mb-20">
+          <h2 class="section-title">Membership <span class="gradient-text">Benefits</span></h2>
+          <p class="section-subtitle">Discover the advantages of becoming an ITAUCDN member</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12 md:mb-16">
+          <div class="card-hover fade-in">
+            <div class="p-6 md:p-8 h-full">
+              <div class="feature-icon">
+                <i class="fas fa-vote-yea"></i>
+              </div>
+              <h3 class="text-xl md:text-2xl font-bold mb-4">Voting Rights</h3>
+              <p class="text-gray-600">Participate in decision-making processes and have a say in community development initiatives.</p>
+            </div>
+          </div>
+          
+          <div class="card-hover fade-in">
+            <div class="p-6 md:p-8 h-full">
+              <div class="feature-icon">
+                <i class="fas fa-handshake"></i>
+              </div>
+              <h3 class="text-xl md:text-2xl font-bold mb-4">Networking</h3>
+              <p class="text-gray-600">Connect with like-minded individuals, community leaders, and development partners.</p>
+            </div>
+          </div>
+          
+          <div class="card-hover fade-in">
+            <div class="p-6 md:p-8 h-full">
+              <div class="feature-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <h3 class="text-xl md:text-2xl font-bold mb-4">Capacity Building</h3>
+              <p class="text-gray-600">Access training programs, workshops, and skill development opportunities.</p>
+            </div>
+          </div>
+          
+          <div class="card-hover fade-in">
+            <div class="p-6 md:p-8 h-full">
+              <div class="feature-icon">
+                <i class="fas fa-file-invoice-dollar"></i>
+              </div>
+              <h3 class="text-xl md:text-2xl font-bold mb-4">Financial Reports</h3>
+              <p class="text-gray-600">Receive transparent financial reports and updates on project implementations.</p>
+            </div>
+          </div>
+          
+          <div class="card-hover fade-in">
+            <div class="p-6 md:p-8 h-full">
+              <div class="feature-icon">
+                <i class="fas fa-briefcase"></i>
+              </div>
+              <h3 class="text-xl md:text-2xl font-bold mb-4">Economic Opportunities</h3>
+              <p class="text-gray-600">Get priority access to employment and business opportunities within community projects.</p>
+            </div>
+          </div>
+          
+          <div class="card-hover fade-in">
+            <div class="p-6 md:p-8 h-full">
+              <div class="feature-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <h3 class="text-xl md:text-2xl font-bold mb-4">Community Support</h3>
+              <p class="text-gray-600">Access community welfare programs and support during challenging times.</p>
+            </div>
+          </div>
+          
+          <div class="card-hover fade-in">
+            <div class="p-6 md:p-8 h-full">
+              <div class="feature-icon">
+                <i class="fas fa-award"></i>
+              </div>
+              <h3 class="text-xl md:text-2xl font-bold mb-4">Recognition</h3>
+              <p class="text-gray-600">Receive certificates and recognition for contributions to community development.</p>
+            </div>
+          </div>
+          
+          <div class="card-hover fade-in">
+            <div class="p-6 md:p-8 h-full">
+              <div class="feature-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h3 class="text-xl md:text-2xl font-bold mb-4">Project Participation</h3>
+              <p class="text-gray-600">Participate in planning and implementation of community development projects.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-gradient-to-r from-[#8B0000]/10 to-[#D4AF37]/10 rounded-2xl p-8 md:p-12 fade-in">
+          <div class="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div>
+              <h3 class="text-2xl md:text-3xl font-bold mb-4">Why Join ITAUCDN?</h3>
+              <p class="text-gray-700 mb-6">
+                As a member of ITAUCDN, you become part of a collective force driving positive change in our communities. Your membership supports:
+              </p>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <i class="fas fa-check text-[#8B0000] mt-1 mr-3"></i>
+                  <span>Infrastructure development projects</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-[#8B0000] mt-1 mr-3"></i>
+                  <span>Educational scholarships and training programs</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-[#8B0000] mt-1 mr-3"></i>
+                  <span>Healthcare initiatives and social welfare</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-[#8B0000] mt-1 mr-3"></i>
+                  <span>Youth and women empowerment programs</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-[#8B0000] mt-1 mr-3"></i>
+                  <span>Environmental sustainability projects</span>
+                </li>
+              </ul>
+            </div>
+            <div class="text-center">
+              <div class="inline-flex items-center justify-center w-32 h-32 rounded-full bg-gradient-to-r from-[#8B0000] to-[#D4AF37] mb-6">
+                <i class="fas fa-users text-white text-4xl"></i>
+              </div>
+              <div class="text-5xl font-bold text-[#8B0000] mb-2">500+</div>
+              <div class="text-xl font-semibold text-gray-700">Active Members</div>
+              <p class="text-gray-600 mt-4">Join our growing community of change-makers</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Membership Categories -->
+    <section class="py-12 md:py-20 bg-gray-50">
+      <div class="container-custom">
+        <div class="text-center mb-12 md:mb-20">
+          <h2 class="section-title">Membership <span class="gradient-text">Categories</span></h2>
+          <p class="section-subtitle">Choose the membership category that best suits your commitment level</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 md:mb-16">
+          <!-- Regular Membership -->
+          <div class="membership-card fade-in">
+            <div class="membership-header">
+              <h3 class="text-2xl font-bold mb-2">Regular Member</h3>
+              <p class="opacity-90">Individual Community Member</p>
+            </div>
+            <div class="membership-features">
+              <div class="text-center mb-6">
+                <div class="membership-price">₦5,000<span>/year</span></div>
+                <p class="text-gray-600">Annual membership fee</p>
+              </div>
+              
+              <ul class="feature-list">
+                <li><i class="fas fa-check-circle"></i> Voting rights in General Assembly</li>
+                <li><i class="fas fa-check-circle"></i> Access to meetings and events</li>
+                <li><i class="fas fa-check-circle"></i> Receive project updates</li>
+                <li><i class="fas fa-check-circle"></i> Participate in community projects</li>
+                <li><i class="fas fa-check-circle"></i> Access to training programs</li>
+                <li><i class="fas fa-times-circle text-gray-400"></i> <span class="text-gray-400">Committee leadership positions</span></li>
+                <li><i class="fas fa-times-circle text-gray-400"></i> <span class="text-gray-400">Priority for employment opportunities</span></li>
+              </ul>
+              
+              <a href="#registration" class="btn-secondary w-full">
+                <i class="fas fa-user-plus"></i> Choose Regular
+              </a>
+            </div>
+          </div>
+          
+          <!-- Active Membership -->
+          <div class="membership-card featured fade-in">
+            <div class="membership-header featured">
+              <div class="inline-flex items-center gap-2 mb-2 px-3 py-1 bg-white/20 rounded-full">
+                <i class="fas fa-crown"></i>
+                <span class="text-sm font-semibold">MOST POPULAR</span>
+              </div>
+              <h3 class="text-2xl font-bold mb-2">Active Member</h3>
+              <p class="opacity-90">Dedicated Community Contributor</p>
+            </div>
+            <div class="membership-features">
+              <div class="text-center mb-6">
+                <div class="membership-price">₦10,000<span>/year</span></div>
+                <p class="text-gray-600">Annual membership fee</p>
+              </div>
+              
+              <ul class="feature-list featured">
+                <li><i class="fas fa-check-circle"></i> All Regular Member benefits</li>
+                <li><i class="fas fa-check-circle"></i> Committee participation rights</li>
+                <li><i class="fas fa-check-circle"></i> Priority for project employment</li>
+                <li><i class="fas fa-check-circle"></i> Leadership training access</li>
+                <li><i class="fas fa-check-circle"></i> Business opportunity priority</li>
+                <li><i class="fas fa-check-circle"></i> Special recognition at events</li>
+                <li><i class="fas fa-check-circle"></i> Eligibility for leadership roles</li>
+              </ul>
+              
+              <a href="#registration" class="btn-primary w-full bg-gradient-to-r from-[#D4AF37] to-[#E6C158] border-0">
+                <i class="fas fa-star"></i> Choose Active
+              </a>
+            </div>
+          </div>
+          
+          <!-- Patron Membership -->
+          <div class="membership-card fade-in">
+            <div class="membership-header">
+              <h3 class="text-2xl font-bold mb-2">Patron Member</h3>
+              <p class="opacity-90">Corporate/High-Impact Contributor</p>
+            </div>
+            <div class="membership-features">
+              <div class="text-center mb-6">
+                <div class="membership-price">₦50,000<span>/year</span></div>
+                <p class="text-gray-600">Annual membership fee</p>
+              </div>
+              
+              <ul class="feature-list">
+                <li><i class="fas fa-check-circle"></i> All Active Member benefits</li>
+                <li><i class="fas fa-check-circle"></i> Advisory committee position</li>
+                <li><i class="fas fa-check-circle"></i> Special recognition plaque</li>
+                <li><i class="fas fa-check-circle"></i> VIP access to all events</li>
+                <li><i class="fas fa-check-circle"></i> Featured in annual report</li>
+                <li><i class="fas fa-check-circle"></i> Strategic planning participation</li>
+                <li><i class="fas fa-check-circle"></i> Partnership opportunities</li>
+              </ul>
+              
+              <a href="#registration" class="btn-secondary w-full">
+                <i class="fas fa-handshake"></i> Choose Patron
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center">
+          <p class="text-gray-600 mb-4">*Student and Senior Citizen discounts available (50% off regular fee)</p>
+          <a href="#faq" class="text-[#8B0000] font-semibold hover:underline">
+            <i class="fas fa-question-circle mr-2"></i> Need help choosing? Visit our FAQ section
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration Process -->
+    <section class="py-12 md:py-20 bg-white">
+      <div class="container-custom">
+        <div class="text-center mb-12 md:mb-20">
+          <h2 class="section-title">Registration <span class="gradient-text">Process</span></h2>
+          <p class="section-subtitle">Simple steps to become an ITAUCDN member</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mb-16">
+          <div class="process-step fade-in">
+            <div class="step-number">1</div>
+            <h3 class="text-xl font-bold mb-4">Complete Application</h3>
+            <p class="text-gray-600">Fill out the membership registration form with your details and preferred category.</p>
+          </div>
+          
+          <div class="process-step fade-in">
+            <div class="step-number">2</div>
+            <h3 class="text-xl font-bold mb-4">Submit Documents</h3>
+            <p class="text-gray-600">Provide required documents including identification and proof of residency.</p>
+          </div>
+          
+          <div class="process-step fade-in">
+            <div class="step-number">3</div>
+            <h3 class="text-xl font-bold mb-4">Payment</h3>
+            <p class="text-gray-600">Pay your membership fee through our secure payment channels.</p>
+          </div>
+          
+          <div class="process-step fade-in">
+            <div class="step-number">4</div>
+            <h3 class="text-xl font-bold mb-4">Confirmation</h3>
+            <p class="text-gray-600">Receive your membership certificate and welcome package within 7 working days.</p>
+          </div>
+        </div>
+        
+        <div class="bg-gradient-to-r from-[#8B0000] to-[#600000] rounded-2xl p-8 md:p-12 text-white fade-in">
+          <div class="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div>
+              <h3 class="text-2xl md:text-3xl font-bold mb-4">Required Documents</h3>
+              <p class="opacity-90 mb-6">Please prepare the following documents for your membership application:</p>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <i class="fas fa-file-alt mt-1 mr-3"></i>
+                  <span>Completed membership application form</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-id-card mt-1 mr-3"></i>
+                  <span>Valid means of identification (National ID, Driver's License, International Passport)</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-home mt-1 mr-3"></i>
+                  <span>Proof of residency in Akpautong–Urua Okok communities</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-camera mt-1 mr-3"></i>
+                  <span>Two recent passport photographs</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-receipt mt-1 mr-3"></i>
+                  <span>Proof of membership fee payment</span>
+                </li>
+              </ul>
+            </div>
+            <div class="text-center">
+              <div class="inline-flex items-center justify-center w-32 h-32 rounded-full bg-white/20 mb-6">
+                <i class="fas fa-file-contract text-white text-4xl"></i>
+              </div>
+              <h4 class="text-xl font-bold mb-4">Download Application Form</h4>
+              <p class="opacity-90 mb-6">You can download the membership application form to fill out offline.</p>
+              <a href="#" class="btn-primary bg-white text-[#8B0000] hover:bg-gray-100 inline-flex">
+                <i class="fas fa-download mr-2"></i> Download Form (PDF)
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration Form -->
+    <section id="registration" class="section-spacing bg-gray-50">
+      <div class="container-custom">
+        <div class="text-center mb-12 md:mb-20">
+          <h2 class="section-title">Membership <span class="gradient-text">Registration</span></h2>
+          <p class="section-subtitle">Complete the form below to begin your membership journey</p>
+        </div>
+        
+        <div class="max-w-4xl mx-auto fade-in">
+          <div class="card-hover">
+            <div class="p-6 md:p-10">
+              <form id="membership-form">
+                <!-- Personal Information -->
+                <div class="mb-8">
+                  <h3 class="text-2xl font-bold mb-6 text-[#8B0000]">Personal Information</h3>
+                  
+                  <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                      <label class="form-label">Full Name *</label>
+                      <input type="text" class="form-input" placeholder="John Doe" required>
+                    </div>
+                    
+                    <div>
+                      <label class="form-label">Date of Birth *</label>
+                      <input type="date" class="form-input" required>
+                    </div>
+                  </div>
+                  
+                  <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                      <label class="form-label">Gender *</label>
+                      <select class="form-select" required>
+                        <option value="">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                    
+                    <div>
+                      <label class="form-label">Marital Status</label>
+                      <select class="form-select">
+                        <option value="">Select Status</option>
+                        <option value="single">Single</option>
+                        <option value="married">Married</option>
+                        <option value="divorced">Divorced</option>
+                        <option value="widowed">Widowed</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                      <label class="form-label">Phone Number *</label>
+                      <input type="tel" class="form-input" placeholder="+234 800 000 0000" required>
+                    </div>
+                    
+                    <div>
+                      <label class="form-label">Email Address *</label>
+                      <input type="email" class="form-input" placeholder="john@example.com" required>
+                    </div>
+                  </div>
+                  
+                  <div class="mb-6">
+                    <label class="form-label">Residential Address *</label>
+                    <textarea class="form-input" rows="3" placeholder="Your complete residential address" required></textarea>
+                  </div>
+                  
+                  <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label class="form-label">Community of Origin *</label>
+                      <select class="form-select" required>
+                        <option value="">Select Community</option>
+                        <option value="akpautong">Akpautong</option>
+                        <option value="urua-okok">Urua Okok</option>
+                        <option value="both">Both Communities</option>
+                      </select>
+                    </div>
+                    
+                    <div>
+                      <label class="form-label">Occupation *</label>
+                      <input type="text" class="form-input" placeholder="Your occupation" required>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Membership Details -->
+                <div class="mb-8">
+                  <h3 class="text-2xl font-bold mb-6 text-[#8B0000]">Membership Details</h3>
+                  
+                  <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                      <label class="form-label">Membership Category *</label>
+                      <select class="form-select" id="membership-category" required>
+                        <option value="">Select Category</option>
+                        <option value="regular">Regular Member (₦5,000/year)</option>
+                        <option value="active">Active Member (₦10,000/year)</option>
+                        <option value="patron">Patron Member (₦50,000/year)</option>
+                      </select>
+                    </div>
+                    
+                    <div>
+                      <label class="form-label">Payment Method *</label>
+                      <select class="form-select" required>
+                        <option value="">Select Payment Method</option>
+                        <option value="bank-transfer">Bank Transfer</option>
+                        <option value="cash">Cash Payment</option>
+                        <option value="pos">POS Payment</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <div class="mb-6">
+                    <label class="form-label">Special Considerations</label>
+                    <div class="space-y-3">
+                      <label class="flex items-center">
+                        <input type="checkbox" class="form-checkbox">
+                        <span class="ml-2">Student (50% discount)</span>
+                      </label>
+                      <label class="flex items-center">
+                        <input type="checkbox" class="form-checkbox">
+                        <span class="ml-2">Senior Citizen (60 years+, 50% discount)</span>
+                      </label>
+                      <label class="flex items-center">
+                        <input type="checkbox" class="form-checkbox">
+                        <span class="ml-2">Person with Disability (Special consideration)</span>
+                      </label>
+                    </div>
+                  </div>
+                  
+                  <div class="mb-6">
+                    <label class="form-label">Why do you want to join ITAUCDN? *</label>
+                    <textarea class="form-input" rows="4" placeholder="Briefly explain your motivation for joining..." required></textarea>
+                  </div>
+                  
+                  <div class="mb-6">
+                    <label class="form-label">How would you like to contribute to community development? *</label>
+                    <textarea class="form-input" rows="4" placeholder="Describe your skills, experience, or ideas for community development..." required></textarea>
+                  </div>
+                </div>
+                
+                <!-- Documents Upload -->
+                <div class="mb-8">
+                  <h3 class="text-2xl font-bold mb-6 text-[#8B0000]">Document Upload</h3>
+                  <p class="text-gray-600 mb-6">Please upload scanned copies of the following documents (PDF, JPG, or PNG format, max 5MB each):</p>
+                  
+                  <div class="space-y-6">
+                    <div>
+                      <label class="form-label">Identification Document *</label>
+                      <input type="file" class="form-input p-2" accept=".pdf,.jpg,.jpeg,.png" required>
+                      <p class="text-sm text-gray-500 mt-2">National ID, Driver's License, or International Passport</p>
+                    </div>
+                    
+                    <div>
+                      <label class="form-label">Proof of Residency *</label>
+                      <input type="file" class="form-input p-2" accept=".pdf,.jpg,.jpeg,.png" required>
+                      <p class="text-sm text-gray-500 mt-2">Utility bill, letter of identification, or other proof</p>
+                    </div>
+                    
+                    <div>
+                      <label class="form-label">Passport Photograph *</label>
+                      <input type="file" class="form-input p-2" accept=".jpg,.jpeg,.png" required>
+                      <p class="text-sm text-gray-500 mt-2">Recent passport photograph (white background)</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Terms and Conditions -->
+                <div class="mb-8">
+                  <div class="border border-gray-300 rounded-xl p-6">
+                    <h4 class="text-lg font-bold mb-4">Terms and Conditions</h4>
+                    <div class="max-h-60 overflow-y-auto p-4 bg-gray-50 rounded-lg mb-6">
+                      <p class="text-gray-700 mb-4">
+                        By submitting this membership application, I hereby agree to the following terms and conditions:
+                      </p>
+                      <ol class="list-decimal pl-5 space-y-3 text-gray-700">
+                        <li>I am a bona fide member of the Akpautong–Urua Okok communities or have legitimate interest in its development.</li>
+                        <li>I agree to abide by the constitution and bylaws of ITAUCDN.</li>
+                        <li>I commit to paying my annual membership dues promptly.</li>
+                        <li>I agree to participate actively in community development activities as required.</li>
+                        <li>I understand that membership may be revoked for violation of organizational rules.</li>
+                        <li>I consent to the collection and processing of my personal data for membership purposes.</li>
+                        <li>I agree to receive communications from ITAUCDN regarding activities and updates.</li>
+                      </ol>
+                    </div>
+                    
+                    <label class="flex items-start">
+                      <input type="checkbox" class="form-checkbox mt-1" required>
+                      <span class="ml-3">I have read and agree to the terms and conditions above *</span>
+                    </label>
+                  </div>
+                </div>
+                
+                <!-- Submit Button -->
+                <div class="text-center">
+                  <button type="submit" class="btn-primary px-12">
+                    <i class="fas fa-paper-plane"></i> Submit Application
+                  </button>
+                  <p class="text-gray-600 mt-4">You will receive a confirmation email within 24 hours of submission.</p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-12 md:py-20 bg-white">
+      <div class="container-custom">
+        <div class="text-center mb-12 md:mb-20">
+          <h2 class="section-title">Frequently Asked <span class="gradient-text">Questions</span></h2>
+          <p class="section-subtitle">Find answers to common questions about ITAUCDN membership</p>
+        </div>
+        
+        <div class="max-w-3xl mx-auto">
+          <div class="space-y-6">
+            <!-- FAQ Item 1 -->
+            <div class="faq-item fade-in">
+              <div class="faq-question">
+                <span>Who can become a member of ITAUCDN?</span>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>Membership is open to:</p>
+                <ul class="list-disc pl-5 mt-2 space-y-2">
+                  <li>Indigenes of Akpautong–Urua Okok communities</li>
+                  <li>Residents living in the communities</li>
+                  <li>Individuals with ancestral ties to the communities</li>
+                  <li>Corporate organizations operating within the communities</li>
+                  <li>Individuals with genuine interest in community development</li>
+                </ul>
+              </div>
+            </div>
+            
+            <!-- FAQ Item 2 -->
+            <div class="faq-item fade-in">
+              <div class="faq-question">
+                <span>What are the benefits of becoming a member?</span>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>ITAUCDN members enjoy numerous benefits including:</p>
+                <ul class="list-disc pl-5 mt-2 space-y-2">
+                  <li>Voting rights in community decisions</li>
+                  <li>Access to capacity building programs</li>
+                  <li>Networking opportunities with community leaders</li>
+                  <li>Priority consideration for employment in community projects</li>
+                  <li>Transparent access to project reports and financial statements</li>
+                  <li>Participation in community development initiatives</li>
+                </ul>
+              </div>
+            </div>
+            
+            <!-- FAQ Item 3 -->
+            <div class="faq-item fade-in">
+              <div class="faq-question">
+                <span>How much does membership cost?</span>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>Membership fees are structured as follows:</p>
+                <ul class="list-disc pl-5 mt-2 space-y-2">
+                  <li><strong>Regular Member:</strong> ₦5,000 per year</li>
+                  <li><strong>Active Member:</strong> ₦10,000 per year</li>
+                  <li><strong>Patron Member:</strong> ₦50,000 per year</li>
+                  <li><strong>Student/Senior Citizen:</strong> 50% discount on regular fee</li>
+                  <li><strong>Corporate Membership:</strong> Custom pricing based on organization size</li>
+                </ul>
+              </div>
+            </div>
+            
+            <!-- FAQ Item 4 -->
+            <div class="faq-item fade-in">
+              <div class="faq-question">
+                <span>How can I pay my membership fee?</span>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>You can pay your membership fee through the following methods:</p>
+                <ul class="list-disc pl-5 mt-2 space-y-2">
+                  <li><strong>Bank Transfer:</strong> To ITAUCDN official account</li>
+                  <li><strong>Cash Payment:</strong> At designated collection points</li>
+                  <li><strong>POS Payment:</strong> Available at ITAUCDN office</li>
+                  <li><strong>Mobile Money:</strong> Through authorized agents</li>
+                </ul>
+                <p class="mt-4"><strong>Bank Account Details:</strong></p>
+                <p>Bank: [Bank Name]<br>
+                Account Name: ITAUCDN<br>
+                Account Number: [Account Number]</p>
+              </div>
+            </div>
+            
+            <!-- FAQ Item 5 -->
+            <div class="faq-item fade-in">
+              <div class="faq-question">
+                <span>How long does the registration process take?</span>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>The registration process typically takes 7-14 working days from submission to approval:</p>
+                <ul class="list-disc pl-5 mt-2 space-y-2">
+                  <li><strong>Application Review:</strong> 2-3 working days</li>
+                  <li><strong>Document Verification:</strong> 3-5 working days</li>
+                  <li><strong>Payment Processing:</strong> 1-2 working days</li>
+                  <li><strong>Certificate Issuance:</strong> 1-2 working days</li>
+                  <li><strong>Welcome Package Delivery:</strong> 2-3 working days</li>
+                </ul>
+                <p class="mt-4">You will receive regular updates via email or SMS throughout the process.</p>
+              </div>
+            </div>
+            
+            <!-- FAQ Item 6 -->
+            <div class="faq-item fade-in">
+              <div class="faq-question">
+                <span>Can I upgrade or downgrade my membership category?</span>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>Yes, you can change your membership category at any time:</p>
+                <ul class="list-disc pl-5 mt-2 space-y-2">
+                  <li>Upgrades take effect immediately upon payment of difference</li>
+                  <li>Downgrades take effect at the next renewal period</li>
+                  <li>No administrative fees for category changes</li>
+                  <li>Pro-rated refunds may apply for downgrades</li>
+                  <li>Contact membership@itaucdn.com for category change requests</li>
+                </ul>
+              </div>
+            </div>
+            
+            <!-- FAQ Item 7 -->
+            <div class="faq-item fade-in">
+              <div class="faq-question">
+                <span>What happens if I don't renew my membership?</span>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>If you don't renew your membership:</p>
+                <ul class="list-disc pl-5 mt-2 space-y-2">
+                  <li>Your membership becomes inactive after 30 days grace period</li>
+                  <li>You lose voting rights and committee participation privileges</li>
+                  <li>Access to members-only events and programs is restricted</li>
+                  <li>You can reactivate within 6 months by paying outstanding fees</li>
+                  <li>After 6 months, you must reapply as a new member</li>
+                  <li>All previously earned benefits and recognition are preserved</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-12 text-center">
+            <p class="text-gray-600 mb-6">Still have questions? We're here to help!</p>
+            <a href="index.html#contact" class="btn-primary">
+              <i class="fas fa-headset"></i> Contact Membership Support
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-12 md:py-20 bg-gradient-to-r from-[#8B0000] to-[#600000] relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-0 left-0 w-64 h-64 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-64 h-64 bg-white rounded-full translate-x-1/2 translate-y-1/2"></div>
+      </div>
+      
+      <div class="container-custom relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-display">
+            Ready to Make a <span class="text-[#D4AF37]">Difference</span>?
+          </h2>
+          
+          <p class="text-lg md:text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+            Join over 500 community members who are actively shaping the future of Akpautong–Urua Okok communities. Your membership matters.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#registration" class="btn-primary bg-white text-[#8B0000] hover:bg-gray-100">
+              <i class="fas fa-user-plus"></i> Become a Member Today
+            </a>
+            <a href="index.html#contact" class="btn-secondary border-white text-white hover:bg-white hover:text-[#8B0000]">
+              <i class="fas fa-question-circle"></i> Ask Questions First
+            </a>
+          </div>
+          
+          <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">
+            <div class="text-center">
+              <div class="text-3xl md:text-4xl font-bold text-white mb-2">500+</div>
+              <div class="text-white/80">Active Members</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl md:text-4xl font-bold text-white mb-2">25+</div>
+              <div class="text-white/80">Projects Funded</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl md:text-4xl font-bold text-white mb-2">5+</div>
+              <div class="text-white/80">Years of Impact</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 md:py-16 bg-gray-900 text-white">
+      <div class="container-custom">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-8 md:mb-12">
+          <div>
+            <!-- Footer logo -->
+            <div class="flex items-center gap-3 md:gap-4 mb-6 md:mb-8">
+              <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center">
+                <img src="img/logo.png" alt="ITAUCDN Logo" class="w-6 h-6 md:w-8 md:h-8">
+              </div>
+              <div>
+                <h3 class="text-xl md:text-2xl font-bold font-display">ITAUCDN</h3>
+                <p class="text-xs text-gray-400">Communities Development Network</p>
+              </div>
+            </div>
+            
+            <p class="text-gray-400 mb-6 md:mb-8 text-sm md:text-base">
+              Building united, progressive, and self-sustaining communities through inclusive development and shared responsibility.
+            </p>
+            
+            <div class="flex gap-3 md:gap-4">
+              <a href="#" class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#8B0000] transition-colors">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#8B0000] transition-colors">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#8B0000] transition-colors">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#8B0000] transition-colors">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+          
+          <div>
+            <h4 class="text-lg md:text-xl font-bold mb-6 md:mb-8">Quick Links</h4>
+            <ul class="space-y-3 md:space-y-4">
+              <li><a href="index.html" class="text-gray-400 hover:text-white transition text-sm md:text-base">Home</a></li>
+              <li><a href="index.html#about" class="text-gray-400 hover:text-white transition text-sm md:text-base">About Us</a></li>
+              <li><a href="index.html#programs" class="text-gray-400 hover:text-white transition text-sm md:text-base">Programs</a></li>
+              <li><a href="index.html#impact" class="text-gray-400 hover:text-white transition text-sm md:text-base">Our Impact</a></li>
+              <li><a href="#membership" class="text-gray-400 hover:text-white transition text-sm md:text-base">Membership</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-lg md:text-xl font-bold mb-6 md:mb-8">Membership</h4>
+            <ul class="space-y-3 md:space-y-4">
+              <li><a href="#benefits" class="text-gray-400 hover:text-white transition text-sm md:text-base">Benefits</a></li>
+              <li><a href="#registration" class="text-gray-400 hover:text-white transition text-sm md:text-base">Registration</a></li>
+              <li><a href="#faq" class="text-gray-400 hover:text-white transition text-sm md:text-base">FAQ</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition text-sm md:text-base">Members Portal</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition text-sm md:text-base">Renew Membership</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-lg md:text-xl font-bold mb-6 md:mb-8">Contact</h4>
+            <ul class="space-y-3 md:space-y-4">
+              <li class="text-gray-400 text-sm md:text-base">Esit Eket LGA, Akwa Ibom</li>
+              <li class="text-gray-400 text-sm md:text-base">membership@itaucdn.com</li>
+              <li class="text-gray-400 text-sm md:text-base">+234 802 327 4698</li>
+              <li class="text-gray-400 text-sm md:text-base">Mon - Fri: 9AM - 5PM</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="border-t border-gray-800 pt-6 md:pt-8 text-center">
+          <p class="text-gray-500 text-sm md:text-base">
+            &copy; <span id="currentYear"></span> Incorporated Trustee of Akpautong Urua Okok Communities Development Network (ITAUCDN). All rights reserved.
+          </p>
+          <p class="text-gray-500 mt-2 text-xs md:text-sm">
+            A non-profit, non-political community development institution registered under the Companies and Allied Matters Act (CAMA).
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+      
+      // Set current year in footer
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+      
+      // Membership form submission
+      const membershipForm = document.getElementById('membership-form');
+      
+      if (membershipForm) {
+        membershipForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          
+          // Show success message
+          alert('Thank you for your membership application! We have received your submission and will contact you within 24-48 hours for next steps.');
+          
+          // Reset form
+          membershipForm.reset();
+          
+          // Scroll to top
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      }
+      
+      // FAQ toggle functionality
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      
+      faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+          const answer = question.nextElementSibling;
+          const toggle = question.querySelector('.faq-toggle');
+          
+          // Close other open FAQs
+          document.querySelectorAll('.faq-answer').forEach(otherAnswer => {
+            if (otherAnswer !== answer && otherAnswer.classList.contains('open')) {
+              otherAnswer.classList.remove('open');
+              otherAnswer.previousElementSibling.querySelector('.faq-toggle').classList.remove('open');
+            }
+          });
+          
+          // Toggle current FAQ
+          answer.classList.toggle('open');
+          toggle.classList.toggle('open');
+          toggle.textContent = toggle.classList.contains('open') ? '−' : '+';
+        });
+      });
+      
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href === '#') return;
+          
+          e.preventDefault();
+          const targetElement = document.querySelector(href);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+            
+            // Close mobile menu if open
+            mobileMenu.classList.add('hidden');
+            
+            // Update active nav link
+            document.querySelectorAll('.nav-link').forEach(link => {
+              link.classList.remove('active');
+            });
+            this.classList.add('active');
+          }
+        });
+      });
+      
+      // Scroll animations
+      const fadeElements = document.querySelectorAll('.fade-in');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+      });
+      
+      fadeElements.forEach(element => {
+        observer.observe(element);
+      });
+      
+      // Update active nav link on scroll
+      window.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('section[id]');
+        const scrollPosition = window.scrollY + 100;
+        
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          const sectionId = section.getAttribute('id');
+          
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            document.querySelectorAll('.nav-link').forEach(link => {
+              link.classList.remove('active');
+              if (link.getAttribute('href') === `#${sectionId}`) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
+        
+        // Navbar background on scroll
+        const nav = document.querySelector('header');
+        if (window.scrollY > 50) {
+          nav.classList.add('shadow-lg');
+        } else {
+          nav.classList.remove('shadow-lg');
+        }
+      });
+    </script>
+  </body>
+</html>

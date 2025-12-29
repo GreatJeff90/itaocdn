@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="icon" href="img/logo-1.png" type="image/x-icon">
+    <title>Leadership - ITAUCDN</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root {
+        --primary: #8B0000;
+        --primary-light: #A52A2A;
+        --secondary: #D4AF37;
+        --accent: #0A2472;
+        --light: #F8F9FA;
+        --dark: #121212;
+      }
+      
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      body {
+        font-family: 'Inter', sans-serif;
+        color: #333;
+        line-height: 1.7;
+        overflow-x: hidden;
+        background-color: #FAFAFA;
+      }
+      
+      .font-display {
+        font-family: 'Space Grotesk', sans-serif;
+      }
+      
+      .section-spacing {
+        padding: 5rem 1rem;
+      }
+      
+      @media (min-width: 640px) {
+        .section-spacing {
+          padding: 6rem 1.5rem;
+        }
+      }
+      
+      @media (min-width: 768px) {
+        .section-spacing {
+          padding: 7rem 2rem;
+        }
+      }
+      
+      @media (min-width: 1024px) {
+        .section-spacing {
+          padding: 8rem 2rem;
+        }
+      }
+      
+      .container-custom {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+      
+      @media (min-width: 640px) {
+        .container-custom {
+          padding: 0 1.5rem;
+        }
+      }
+      
+      @media (min-width: 768px) {
+        .container-custom {
+          padding: 0 2rem;
+        }
+      }
+      
+      .hero-gradient {
+        background: linear-gradient(135deg, #8B0000 0%, #600000 100%);
+      }
+      
+      .btn-primary {
+        background-color: var(--primary);
+        color: white;
+        padding: 0.875rem 2rem;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        border: 2px solid transparent;
+        font-size: 1rem;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+      }
+      
+      @media (min-width: 640px) {
+        .btn-primary {
+          width: auto;
+          padding: 1rem 2.5rem;
+          font-size: 1.05rem;
+        }
+      }
+      
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(139, 0, 0, 0.2);
+        background-color: var(--primary-light);
+      }
+      
+      .btn-primary:active {
+        transform: translateY(-1px);
+      }
+      
+      .btn-secondary {
+        background-color: transparent;
+        color: var(--primary);
+        padding: 0.875rem 2rem;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        border: 2px solid var(--primary);
+        font-size: 1rem;
+        width: 100%;
+      }
+      
+      @media (min-width: 640px) {
+        .btn-secondary {
+          width: auto;
+          padding: 1rem 2.5rem;
+          font-size: 1.05rem;
+        }
+      }
+      
+      .btn-secondary:hover {
+        background-color: var(--primary);
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(139, 0, 0, 0.15);
+      }
+      
+      .card-hover {
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border-radius: 16px;
+        overflow: hidden;
+        background: white;
+        border: 1px solid #F0F0F0;
+      }
+      
+      .card-hover:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
+        border-color: #E0E0E0;
+      }
+      
+      .gradient-text {
+        background: linear-gradient(135deg, #8B0000 0%, #D4AF37 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      
+      .nav-blur {
+        backdrop-filter: blur(12px);
+        background-color: rgba(255, 255, 255, 0.92);
+      }
+      
+      .nav-link {
+        position: relative;
+        color: #555;
+        font-weight: 500;
+        padding: 0.5rem 0;
+        transition: color 0.3s;
+      }
+      
+      .nav-link:hover {
+        color: var(--primary);
+      }
+      
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--primary);
+        transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+      
+      .nav-link:hover::after {
+        width: 100%;
+      }
+      
+      .nav-link.active {
+        color: var(--primary);
+      }
+      
+      .nav-link.active::after {
+        width: 100%;
+      }
+      
+      .section-title {
+        font-size: 2.25rem;
+        font-weight: 800;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+        color: var(--dark);
+      }
+      
+      @media (min-width: 768px) {
+        .section-title {
+          font-size: 3rem;
+        }
+      }
+      
+      @media (min-width: 1024px) {
+        .section-title {
+          font-size: 3.5rem;
+        }
+      }
+      
+      .section-subtitle {
+        font-size: 1.125rem;
+        color: #666;
+        max-width: 700px;
+        margin: 0 auto 3rem;
+      }
+      
+      @media (min-width: 768px) {
+        .section-subtitle {
+          font-size: 1.25rem;
+          margin-bottom: 4rem;
+        }
+      }
+      
+      /* Leadership specific styles */
+      .leadership-card {
+        height: 100%;
+        text-align: center;
+      }
+      
+      .leader-image {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        margin: 0 auto 1.5rem;
+        overflow: hidden;
+        border: 4px solid white;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+      
+      .leader-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      .leader-role {
+        display: inline-block;
+        padding: 0.5rem 1.5rem;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+        color: white;
+        border-radius: 50px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+      
+      .leader-name {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+      
+      .leader-title {
+        color: var(--primary);
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+      
+      .leader-bio {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+      
+      .leader-social {
+        display: flex;
+        justify-content: center;
+        gap: 0.75rem;
+      }
+      
+      .leader-social a {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #F0F0F0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #555;
+        transition: all 0.3s;
+      }
+      
+      .leader-social a:hover {
+        background-color: var(--primary);
+        color: white;
+      }
+      
+      /* Governance Structure */
+      .governance-item {
+        position: relative;
+        padding: 2rem;
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+        margin-bottom: 2rem;
+      }
+      
+      .governance-icon {
+        width: 70px;
+        height: 70px;
+        border-radius: 20px;
+        background: linear-gradient(135deg, rgba(139, 0, 0, 0.1) 0%, rgba(212, 175, 55, 0.1) 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+      }
+      
+      .governance-icon i {
+        font-size: 1.75rem;
+        color: var(--primary);
+      }
+      
+      /* Timeline */
+      .timeline {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      
+      .timeline::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: linear-gradient(to bottom, var(--primary), var(--secondary));
+        transform: translateX(-50%);
+      }
+      
+      @media (max-width: 768px) {
+        .timeline::before {
+          left: 30px;
+        }
+      }
+      
+      .timeline-item {
+        position: relative;
+        margin-bottom: 3rem;
+        width: 50%;
+      }
+      
+      .timeline-item:nth-child(odd) {
+        left: 0;
+        padding-right: 60px;
+      }
+      
+      .timeline-item:nth-child(even) {
+        left: 50%;
+        padding-left: 60px;
+      }
+      
+      @media (max-width: 768px) {
+        .timeline-item {
+          width: 100%;
+          left: 0 !important;
+          padding-left: 70px !important;
+          padding-right: 0 !important;
+        }
+      }
+      
+      .timeline-dot {
+        position: absolute;
+        top: 0;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: var(--primary);
+        border: 4px solid white;
+        box-shadow: 0 0 0 3px var(--primary);
+      }
+      
+      .timeline-item:nth-child(odd) .timeline-dot {
+        right: -12px;
+      }
+      
+      .timeline-item:nth-child(even) .timeline-dot {
+        left: -12px;
+      }
+      
+      @media (max-width: 768px) {
+        .timeline-dot {
+          left: 18px !important;
+          right: auto !important;
+        }
+      }
+      
+      .timeline-content {
+        background: white;
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+      
+      .timeline-year {
+        display: inline-block;
+        padding: 0.5rem 1.5rem;
+        background-color: var(--primary);
+        color: white;
+        border-radius: 50px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+      
+      /* Table styles */
+      .leadership-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      }
+      
+      .leadership-table th {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+        color: white;
+        padding: 1.5rem 2rem;
+        text-align: left;
+        font-weight: 600;
+      }
+      
+      .leadership-table td {
+        padding: 1.5rem 2rem;
+        border-bottom: 1px solid #F0F0F0;
+      }
+      
+      .leadership-table tr:last-child td {
+        border-bottom: none;
+      }
+      
+      .leadership-table tr:hover {
+        background-color: #FAFAFA;
+      }
+      
+      /* Accordion */
+      .accordion-item {
+        border-bottom: 1px solid #E0E0E0;
+        margin-bottom: 1rem;
+      }
+      
+      .accordion-header {
+        padding: 1.5rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: white;
+        border-radius: 12px;
+        transition: all 0.3s;
+      }
+      
+      .accordion-header:hover {
+        background-color: #FAFAFA;
+      }
+      
+      .accordion-header h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--dark);
+      }
+      
+      .accordion-toggle {
+        color: var(--primary);
+        font-size: 1.5rem;
+        transition: transform 0.3s;
+      }
+      
+      .accordion-toggle.open {
+        transform: rotate(45deg);
+      }
+      
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        padding: 0 1.5rem;
+      }
+      
+      .accordion-content.open {
+        max-height: 1000px;
+        padding: 1.5rem;
+      }
+      
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s, transform 0.8s;
+      }
+      
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      .logo-clean {
+        background: transparent !important;
+        box-shadow: none !important;
+      }
+      
+      /* Responsive adjustments */
+      .mobile-stack {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      @media (min-width: 640px) {
+        .mobile-stack {
+          flex-direction: row;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .leadership-table-wrapper {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+        }
+        
+        .leadership-table {
+          min-width: 600px;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <!-- Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 nav-blur shadow-sm">
+      <div class="container-custom">
+        <div class="flex justify-between items-center py-5">
+          <!-- Logo -->
+          <a href="index.html" class="flex items-center gap-3 md:gap-4">
+            <div class="w-10 h-10 md:w-14 md:h-14 rounded-xl flex items-center justify-center logo-clean">
+              <img src="img/logo.png" alt="ITAUCDN Logo" class="w-8 h-8">
+            </div>
+            <div>
+              <h1 class="text-lg md:text-2xl font-bold text-gray-900 font-display">ITAUCDN</h1>
+              <p class="text-xs text-gray-600">Communities Development Network</p>
+            </div>
+          </a>
+          
+          <!-- Desktop Navigation -->
+          <nav class="hidden lg:flex items-center gap-8">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="index.html#about" class="nav-link">About</a>
+            <a href="index.html#programs" class="nav-link">Programs</a>
+            <a href="index.html#impact" class="nav-link">Impact</a>
+            <a href="leadership.html" class="nav-link active">Leadership</a>
+            <a href="resources.html" class="nav-link">Resources </a>
+            <a href="membership.html" class="nav-link">Membership</a>
+            <a href="index.html#contact" class="btn-primary text-sm md:text-base">
+              <i class="fas fa-envelope"></i> Contact Us
+            </a>
+          </nav>
+          
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-button" class="lg:hidden text-gray-700">
+            <i class="fas fa-bars text-xl md:text-2xl"></i>
+          </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-white border-t mt-2 py-6 px-4 rounded-xl shadow-xl">
+          <div class="flex flex-col gap-6">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="index.html#about" class="nav-link">About</a>
+            <a href="index.html#programs" class="nav-link">Programs</a>
+            <a href="index.html#impact" class="nav-link">Impact</a>
+            <a href="leadership.html" class="nav-link active">Leadership</a>
+            <a href="resources.html" class="nav-link">Resources </a>
+            <a href="membership.html" class="nav-link">Membership</a>
+            <a href="index.html#contact" class="btn-primary w-full">
+              <i class="fas fa-envelope"></i> Contact Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-r from-[#8B0000] to-[#600000] relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-0 left-0 w-64 h-64 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-64 h-64 bg-white rounded-full translate-x-1/2 translate-y-1/2"></div>
+      </div>
+      
+      <div class="container-custom relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="inline-flex items-center gap-3 mb-6 px-4 py-2 bg-white/20 rounded-full backdrop-blur-sm">
+            <span class="w-2 h-2 bg-white rounded-full"></span>
+            <span class="text-white font-semibold text-sm md:text-base">GOVERNANCE & LEADERSHIP</span>
+          </div>
+          
+          <h1 class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 font-display leading-tight">
+            Meet Our <span class="text-[#D4AF37]">Leadership</span> Team
+          </h1>
+          
+          <p class="text-lg md:text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+            Dedicated leaders committed to transparent governance and sustainable community development in Akpautong–Urua Okok communities.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#board" class="btn-primary bg-white text-[#8B0000] hover:bg-gray-100">
+              <i class="fas fa-users"></i> Board of Trustees
+            </a>
+            <a href="#structure" class="btn-secondary border-white text-white hover:bg-white hover:text-[#8B0000]">
+              <i class="fas fa-sitemap"></i> Governance Structure
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Board of Trustees -->
+    <section id="board" class="section-spacing bg-white">
+      <div class="container-custom">
+        <div class="text-center mb-12 md:mb-20">
+          <h2 class="section-title">Board of <span class="gradient-text">Trustees</span></h2>
+          <p class="section-subtitle">Guiding our organization with wisdom, experience, and commitment to community development</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <!-- Chairman -->
+          <div class="card-hover leadership-card fade-in">
+            <div class="p-8">
+              <div class="leader-image">
+                <img src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mr. Eseme Emmanuel Udi">
+              </div>
+              <span class="leader-role">Chairman</span>
+              <h3 class="leader-name">Mr. Eseme Emmanuel Udi</h3>
+              <div class="leader-title">Board Chairman</div>
+              <p class="leader-bio">
+                A seasoned community leader with over 25 years of experience in community development and governance. Former Local Government Chairman with extensive experience in public administration.
+              </p>
+              <div class="leader-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+                <a href="#"><i class="fas fa-phone"></i></a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Vice Chairman -->
+          <div class="card-hover leadership-card fade-in">
+            <div class="p-8">
+              <div class="leader-image">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hon. Okon Edoho">
+              </div>
+              <span class="leader-role">Vice Chairman</span>
+              <h3 class="leader-name">Hon. Okon Edoho</h3>
+              <div class="leader-title">Vice Chairman</div>
+              <p class="leader-bio">
+                Former legislator and community advocate with 20+ years in public service. Specializes in conflict resolution, community mobilization, and grassroots development initiatives.
+              </p>
+              <div class="leader-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+                <a href="#"><i class="fas fa-phone"></i></a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Secretary -->
+          <div class="card-hover leadership-card fade-in">
+            <div class="p-8">
+              <div class="leader-image">
+                <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Engr. Emmanuel Akpekong Sam">
+              </div>
+              <span class="leader-role">Secretary</span>
+              <h3 class="leader-name">Engr. Emmanuel Akpekong Sam</h3>
+              <div class="leader-title">Board Secretary</div>
+              <p class="leader-bio">
+                Chartered engineer with expertise in infrastructure development. Leads technical oversight for all community projects and ensures quality implementation of development initiatives.
+              </p>
+              <div class="leader-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+                <a href="#"><i class="fas fa-phone"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center">
+          <a href="#structure" class="btn-primary">
+            <i class="fas fa-arrow-down"></i> View Full Leadership Structure
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Management Committee -->
+    <section class="py-12 md:py-20 bg-gray-50">
+      <div class="container-custom">
+        <div class="text-center mb-12 md:mb-20">
+          <h2 class="section-title">Management <span class="gradient-text">Committee</span></h2>
+          <p class="section-subtitle">Responsible for day-to-day operations and implementation of community development programs</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <!-- Chairman -->
+          <div class="card-hover leadership-card fade-in">
+            <div class="p-8">
+              <div class="leader-image">
+                <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Rt. Hon. Okon Bassey Iyanam">
+              </div>
+              <span class="leader-role">Chairman</span>
+              <h3 class="leader-name">Rt. Hon. Okon Bassey Iyanam</h3>
+              <div class="leader-title">Management Committee Chairman</div>
+              <p class="leader-bio">
+                Former Speaker with extensive legislative experience. Oversees all operational activities and ensures alignment with community development goals and objectives.
+              </p>
+              <div class="leader-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+                <a href="#"><i class="fas fa-phone"></i></a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Secretary -->
+          <div class="card-hover leadership-card fade-in">
+            <div class="p-8">
+              <div class="leader-image">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mr. Unwana Effiong Tom">
+              </div>
+              <span class="leader-role">Secretary</span>
+              <h3 class="leader-name">Mr. Unwana Effiong Tom</h3>
+              <div class="leader-title">Management Committee Secretary</div>
+              <p class="leader-bio">
+                Experienced administrator with background in community development organizations. Handles documentation, communication, and coordination between committees.
+              </p>
+              <div class="leader-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+                <a href="#"><i class="fas fa-phone"></i></a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Treasurer -->
+          <div class="card-hover leadership-card fade-in">
+            <div class="p-8">
+              <div class="leader-image">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mrs. Ini Sunday Nnamudo">
+              </div>
+              <span class="leader-role">Treasurer</span>
+              <h3 class="leader-name">Mrs. Ini Sunday Nnamudo</h3>
+              <div class="leader-title">Management Committee Treasurer</div>
+              <p class="leader-bio">
+                Chartered accountant with 15+ years experience in financial management. Ensures transparency and accountability in all financial transactions and reporting.
+              </p>
+              <div class="leader-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+                <a href="#"><i class="fas fa-phone"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Management Committee Table -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 fade-in">
+          <h3 class="text-2xl font-bold mb-6 text-center">Complete Management Committee</h3>
+          <div class="leadership-table-wrapper">
+            <table class="leadership-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Designation</th>
+                  <th>Responsibilities</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="font-semibold">Rt. Hon. Okon Bassey Iyanam</td>
+                  <td>Chairman</td>
+                  <td>Overall supervision and coordination</td>
+                </tr>
+                <tr>
+                  <td class="font-semibold">Mr. Unwana Effiong Tom</td>
+                  <td>Secretary</td>
+                  <td>Documentation and communication</td>
+                </tr>
+                <tr>
+                  <td class="font-semibold">Mrs. Ini Sunday Nnamudo</td>
+                  <td>Treasurer</td>
+                  <td>Financial management and reporting</td>
+                </tr>
+                <tr>
+                  <td class="font-semibold">Mr. Godwin Paul Edoho Uqua</td>
+                  <td>Member</td>
+                  <td>Project monitoring and evaluation</td>
+                </tr>
+                <tr>
+                  <td class="font-semibold">Hon. Samuel Francis Okon</td>
+                  <td>Member</td>
+                  <td>Community mobilization and engagement</td>
+                </tr>
+                <tr>
+                  <td class="font-semibold">Hon. Anthony Effiong Okon</td>
+                  <td>Member</td>
+                  <td>Infrastructure development oversight</td>
+                </tr>
+                <tr>
+                  <td class="font-semibold">Mr. Gabriel Monday Jimmy</td>
+                  <td>Member</td>
+                  <td>Youth and sports development</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Governance Structure -->
+    <section id="structure" class="section-spacing bg-white">
+      <div class="container-custom">
+        <div class="text-center mb-12 md:mb-20">
+          <h2 class="section-title">Governance <span class="gradient-text">Structure</span></h2>
+          <p class="section-subtitle">Our transparent and accountable leadership framework for effective community development</p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8 mb-16">
+          <!-- Board of Trustees -->
+          <div class="governance-item fade-in">
+            <div class="governance-icon">
+              <i class="fas fa-users-crown"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Board of Trustees</h3>
+            <p class="text-gray-600 mb-4">The highest decision-making body responsible for strategic direction, policy formulation, and overall governance.</p>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <i class="fas fa-check text-[#8B0000] mt-1 mr-2"></i>
+                <span>Strategic planning and oversight</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-[#8B0000] mt-1 mr-2"></i>
+                <span>Policy formulation and approval</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-[#8B0000] mt-1 mr-2"></i>
+                <span>Financial oversight and accountability</span>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Management Committee -->
+          <div class="governance-item fade-in">
+            <div class="governance-icon">
+              <i class="fas fa-tasks"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Management Committee</h3>
+            <p class="text-gray-600 mb-4">Implements Board decisions, manages day-to-day operations, and oversees project execution.</p>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <i class="fas fa-check text-[#8B0000] mt-1 mr-2"></i>
+                <span>Project implementation and monitoring</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-[#8B0000] mt-1 mr-2"></i>
+                <span>Operational management and coordination</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-[#8B0000] mt-1 mr-2"></i>
+                <span>Financial management and reporting</span>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Caucus General Assembly -->
+          <div class="governance-item fade-in">
+            <div class="governance-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Caucus General Assembly</h3>
+            <p class="text-gray-600 mb-4">Represents community interests, provides grassroots input, and ensures community participation.</p>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <i class="fas fa-check text-[#8B0000] mt-1 mr-2"></i>
+                <span>Community representation and feedback</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-[#8B0000] mt-1 mr-2"></i>
+                <span>Conflict resolution and peacebuilding</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-[#8B0000] mt-1 mr-2"></i>
+                <span>Community mobilization and engagement</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Governance Chart -->
+        <div class="bg-gradient-to-r from-[#8B0000]/10 to-[#D4AF37]/10 rounded-2xl p-8 md:p-12 fade-in">
+          <h3 class="text-2xl md:text-3xl font-bold mb-8 text-center">Organizational Structure Chart</h3>
+          <div class="relative">
+            <!-- Top Level - Board of Trustees -->
+            <div class="flex justify-center mb-12">
+              <div class="bg-white rounded-xl shadow-lg p-6 text-center max-w-md">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-[#8B0000] to-[#600000] mb-4">
+                  <i class="fas fa-users-crown text-white text-2xl"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-2">Board of Trustees</h4>
+                <p class="text-gray-600">Strategic Leadership & Governance</p>
+              </div>
+            </div>
+            
+            <!-- Connector Lines -->
+            <div class="flex justify-center mb-8">
+              <div class="w-1 h-8 bg-gradient-to-b from-[#8B0000] to-[#D4AF37]"></div>
+            </div>
+            
+            <!-- Middle Level - Management Committee -->
+            <div class="flex justify-center mb-8">
+              <div class="bg-white rounded-xl shadow-lg p-6 text-center max-w-md">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-[#8B0000] to-[#600000] mb-4">
+                  <i class="fas fa-tasks text-white text-2xl"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-2">Management Committee</h4>
+                <p class="text-gray-600">Operational Management & Implementation</p>
+              </div>
+            </div>
+            
+            <!-- Connector Lines -->
+            <div class="flex justify-center mb-8">
+              <div class="w-1 h-8 bg-gradient-to-b from-[#8B0000] to-[#D4AF37]"></div>
+            </div>
+            
+            <!-- Bottom Level - Committees & Assembly -->
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="bg-white rounded-xl shadow p-5 text-center">
+                <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#8B0000]/10 mb-3">
+                  <i class="fas fa-project-diagram text-[#8B0000]"></i>
+                </div>
+                <h5 class="font-bold mb-1">Project Committee</h5>
+                <p class="text-sm text-gray-600">Project Planning & Execution</p>
+              </div>
+              
+              <div class="bg-white rounded-xl shadow p-5 text-center">
+                <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#8B0000]/10 mb-3">
+                  <i class="fas fa-handshake text-[#8B0000]"></i>
+                </div>
+                <h5 class="font-bold mb-1">Caucus Assembly</h5>
+                <p class="text-sm text-gray-600">Community Representation</p>
+              </div>
+              
+              <div class="bg-white rounded-xl shadow p-5 text-center">
+                <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#8B0000]/10 mb-3">
+                  <i class="fas fa-users text-[#8B0000]"></i>
+                </div>
+                <h5 class="font-bold mb-1">General Members</h5>
+                <p class="text-sm text-gray-600">Community Participation</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Caucus General Assembly -->
+    <section class="py-12 md:py-20 bg-gray-50">
+      <div class="container-custom">
+        <div class="text-center mb-12 md:mb-20">
+          <h2 class="section-title">Caucus General <span class="gradient-text">Assembly</span></h2>
+          <p class="section-subtitle">Community representatives ensuring grassroots participation and democratic governance</p>
+        </div>
+        
+        <div class="max-w-4xl mx-auto mb-16 fade-in">
+          <div class="card-hover">
+            <div class="p-8 md:p-12">
+              <div class="text-center mb-8">
+                <div class="leader-image inline-block">
+                  <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hon. Augustus Amos Nkuseying">
+                </div>
+                <h3 class="text-2xl font-bold mb-2 mt-4">Hon. Augustus Amos Nkuseying</h3>
+                <div class="leader-title">Caucus General Assembly Chairman</div>
+              </div>
+              
+              <div class="bg-gradient-to-r from-[#8B0000]/10 to-[#D4AF37]/10 rounded-xl p-6 mb-8">
+                <h4 class="text-xl font-bold mb-4 text-center">Role and Responsibilities</h4>
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <ul class="space-y-3">
+                      <li class="flex items-start">
+                        <i class="fas fa-check text-[#8B0000] mt-1 mr-3"></i>
+                        <span>Represent community interests in decision-making</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="fas fa-check text-[#8B0000] mt-1 mr-3"></i>
+                        <span>Facilitate community consultations and feedback</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="fas fa-check text-[#8B0000] mt-1 mr-3"></i>
+                        <span>Mediate community conflicts and disputes</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <ul class="space-y-3">
+                      <li class="flex items-start">
+                        <i class="fas fa-check text-[#8B0000] mt-1 mr-3"></i>
+                        <span>Mobilize community participation in projects</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="fas fa-check text-[#8B0000] mt-1 mr-3"></i>
+                        <span>Ensure transparent communication with community</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="fas fa-check text-[#8B0000] mt-1 mr-3"></i>
+                        <span>Advocate for community needs and priorities</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Assembly Members -->
+              <div>
+                <h4 class="text-xl font-bold mb-6 text-center">Assembly Members</h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                  <div class="text-center p-4 bg-white rounded-xl shadow-sm">
+                    <div class="font-semibold">Hon. Samuel Francis Okon</div>
+                    <div class="text-sm text-gray-600 mt-1">Community Representative</div>
+                  </div>
+                  <div class="text-center p-4 bg-white rounded-xl shadow-sm">
+                    <div class="font-semibold">Hon. Anthony Effiong Okon</div>
+                    <div class="text-sm text-gray-600 mt-1">Community Representative</div>
+                  </div>
+                  <div class="text-center p-4 bg-white rounded-xl shadow-sm">
+                    <div class="font-semibold">Mr. Godwin Paul Edoho Uqua</div>
+                    <div class="text-sm text-gray-600 mt-1">Community Representative</div>
+                  </div>
+                  <div class="text-center p-4 bg-white rounded-xl shadow-sm">
+                    <div class="font-semibold">Mr. Gabriel Monday Jimmy</div>
+                    <div class="text-sm text-gray-600 mt-1">Youth Representative</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Committees Accordion -->
+        <div class="max-w-4xl mx-auto fade-in">
+          <h3 class="text-2xl md:text-3xl font-bold mb-8 text-center">Standing Committees</h3>
+          
+          <div class="space-y-4">
+            <!-- Committee 1 -->
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <h3>Project Planning & Implementation Committee</h3>
+                <span class="accordion-toggle">+</span>
+              </div>
+              <div class="accordion-content">
+                <div class="p-4 bg-gray-50 rounded-xl">
+                  <p class="mb-4">Responsible for planning, designing, and overseeing all community development projects.</p>
+                  <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <h4 class="font-bold mb-2">Key Responsibilities:</h4>
+                      <ul class="space-y-2">
+                        <li class="flex items-start">
+                          <i class="fas fa-check text-[#8B0000] mt-1 mr-2"></i>
+                          <span>Project identification and prioritization</span>
+                        </li>
+                        <li class="flex items-start">
+                          <i class="fas fa-check text-[#8B0000] mt-1 mr-2"></i>
+                          <span>Technical design and specifications</span>
+                        </li>
+                        <li class="flex items-start">
+                          <i class="fas fa-check text-[#8B0000] mt-1 mr-2"></i>
+                          <span>Contractor selection and supervision</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 class="font-bold mb-2">Committee Members:</h4>
+                      <ul class="space-y-2">
+                        <li>Engr. Emmanuel Akpekong Sam (Chair)</li>
+                        <li>Mr. Godwin Paul Edoho Uqua</li>
+                        <li>Hon. Anthony Effiong Okon</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Committee 2 -->
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <h3>Finance & Audit Committee</h3>
+                <span class="accordion-toggle">+</span>
+              </div>
+              <div class="accordion-content">
+                <div class="p-4 bg-gray-50 rounded-xl">
+                  <p class="mb-4">Oversees financial management, budgeting, and ensures transparency in all financial transactions.</p>
+                  <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <h4 class="font-bold mb-2">Key Responsibilities:</h4>
+                      <ul class="space-y-2">
+                        <li class="flex items-start">
+                          <i class="fas fa-check text-[#8B0000] mt-1 mr-2"></i>
+                          <span>Budget preparation and monitoring</span>
+                        </li>
+                        <li class="flex items-start">
+                          <i class="fas fa-check text-[#8B0000] mt-1 mr-2"></i>
+                          <span>Financial reporting and accountability</span>
+                        </li>
+                        <li class="flex items-start">
+                          <i class="fas fa-check text-[#8B0000] mt-1 mr-2"></i>
+                          <span>Internal audit and compliance</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 class="font-bold mb-2">Committee Members:</h4>
+                      <ul class="space-y-2">
+                        <li>Mrs. Ini Sunday Nnamudo (Chair)</li>
+                        <li>Mr. Unwana Effiong Tom</li>
+                        <li>Hon. Samuel Francis Okon</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Committee 3 -->
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <h3>Community Relations & Welfare Committee</h3>
+                <span class="accordion-toggle">+</span>
+              </div>
+              <div class="accordion-content">
+                <div class="p-4 bg-gray-50 rounded-xl">
+                  <p class="mb-4">Handles community engagement, conflict resolution, and social welfare programs.</p>
+                  <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <h4 class="font-bold mb-2">Key Responsibilities:</h4>
+                      <ul class="space-y-2">
+                        <li class="flex items-start">
+                          <i class="fas fa-check text-[#8B0000] mt-1 mr-2"></i>
+                          <span>Community mobilization and engagement</span>
+                        </li>
+                        <li class="flex items-start">
+                          <i class="fas fa-check text-[#8B0000] mt-1 mr-2"></i>
+                          <span>Conflict mediation and resolution</span>
+                        </li>
+                        <li class="flex items-start">
+                          <i class="fas fa-check text-[#8B0000] mt-1 mr-2"></i>
+                          <span>Social welfare program coordination</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 class="font-bold mb-2">Committee Members:</h4>
+                      <ul class="space-y-2">
+                        <li>Hon. Augustus Amos Nkuseying (Chair)</li>
+                        <li>Mr. Gabriel Monday Jimmy</li>
+                        <li>Rt. Hon. Okon Bassey Iyanam</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leadership Journey -->
+    <section class="py-12 md:py-20 bg-white">
+      <div class="container-custom">
+        <div class="text-center mb-12 md:mb-20">
+          <h2 class="section-title">Our Leadership <span class="gradient-text">Journey</span></h2>
+          <p class="section-subtitle">Key milestones in our governance and leadership development</p>
+        </div>
+        
+        <div class="timeline fade-in">
+          <!-- Timeline Item 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">2018</span>
+              <h3 class="text-xl font-bold mb-3">Formation of Community Development Committee</h3>
+              <p class="text-gray-600">Initial community meetings led to the formation of the first community development committee, laying the foundation for organized leadership.</p>
+            </div>
+          </div>
+          
+          <!-- Timeline Item 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">2019</span>
+              <h3 class="text-xl font-bold mb-3">Legal Registration & Board Constitution</h3>
+              <p class="text-gray-600">Successful registration as an Incorporated Trustee under CAMA and constitution of the first Board of Trustees with elected community leaders.</p>
+            </div>
+          </div>
+          
+          <!-- Timeline Item 3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">2020</span>
+              <h3 class="text-xl font-bold mb-3">Establishment of Management Committee</h3>
+              <p class="text-gray-600">Formation of the Management Committee to handle day-to-day operations and project implementation, enhancing organizational efficiency.</p>
+            </div>
+          </div>
+          
+          <!-- Timeline Item 4 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">2021</span>
+              <h3 class="text-xl font-bold mb-3">Caucus General Assembly Inauguration</h3>
+              <p class="text-gray-600">Establishment of the Caucus General Assembly to ensure grassroots participation and democratic representation in decision-making.</p>
+            </div>
+          </div>
+          
+          <!-- Timeline Item 5 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">2022-Present</span>
+              <h3 class="text-xl font-bold mb-3">Governance Strengthening & Expansion</h3>
+              <p class="text-gray-600">Continuous improvement of governance structures, establishment of standing committees, and expansion of leadership roles to accommodate community growth.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Leadership -->
+    <section class="py-12 md:py-20 bg-gradient-to-r from-[#8B0000] to-[#600000] relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-0 left-0 w-64 h-64 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-64 h-64 bg-white rounded-full translate-x-1/2 translate-y-1/2"></div>
+      </div>
+      
+      <div class="container-custom relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-display">
+            Connect with Our <span class="text-[#D4AF37]">Leaders</span>
+          </h2>
+          
+          <p class="text-lg md:text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+            Our leadership team is accessible and committed to transparent communication with community members and stakeholders.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="index.html#contact" class="btn-primary bg-white text-[#8B0000] hover:bg-gray-100">
+              <i class="fas fa-envelope"></i> Contact Leadership
+            </a>
+            <a href="#board" class="btn-secondary border-white text-white hover:bg-white hover:text-[#8B0000]">
+              <i class="fas fa-users"></i> Meet the Board
+            </a>
+          </div>
+          
+          <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">
+            <div class="text-center">
+              <div class="text-3xl md:text-4xl font-bold text-white mb-2">3</div>
+              <div class="text-white/80">Board of Trustees</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl md:text-4xl font-bold text-white mb-2">7</div>
+              <div class="text-white/80">Management Committee</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl md:text-4xl font-bold text-white mb-2">5+</div>
+              <div class="text-white/80">Standing Committees</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 md:py-16 bg-gray-900 text-white">
+      <div class="container-custom">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-8 md:mb-12">
+          <div>
+            <!-- Footer logo -->
+            <div class="flex items-center gap-3 md:gap-4 mb-6 md:mb-8">
+              <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center">
+                <img src="img/logo.png" alt="ITAUCDN Logo" class="w-6 h-6 md:w-8 md:h-8">
+              </div>
+              <div>
+                <h3 class="text-xl md:text-2xl font-bold font-display">ITAUCDN</h3>
+                <p class="text-xs text-gray-400">Communities Development Network</p>
+              </div>
+            </div>
+            
+            <p class="text-gray-400 mb-6 md:mb-8 text-sm md:text-base">
+              Building united, progressive, and self-sustaining communities through inclusive development and shared responsibility.
+            </p>
+            
+            <div class="flex gap-3 md:gap-4">
+              <a href="#" class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#8B0000] transition-colors">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#8B0000] transition-colors">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#8B0000] transition-colors">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#8B0000] transition-colors">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+          
+          <div>
+            <h4 class="text-lg md:text-xl font-bold mb-6 md:mb-8">Quick Links</h4>
+            <ul class="space-y-3 md:space-y-4">
+              <li><a href="index.html" class="text-gray-400 hover:text-white transition text-sm md:text-base">Home</a></li>
+              <li><a href="index.html#about" class="text-gray-400 hover:text-white transition text-sm md:text-base">About Us</a></li>
+              <li><a href="index.html#programs" class="text-gray-400 hover:text-white transition text-sm md:text-base">Programs</a></li>
+              <li><a href="leadership.html" class="text-gray-400 hover:text-white transition text-sm md:text-base">Leadership</a></li>
+              <li><a href="membership.html" class="text-gray-400 hover:text-white transition text-sm md:text-base">Membership</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-lg md:text-xl font-bold mb-6 md:mb-8">Leadership</h4>
+            <ul class="space-y-3 md:space-y-4">
+              <li><a href="#board" class="text-gray-400 hover:text-white transition text-sm md:text-base">Board of Trustees</a></li>
+              <li><a href="#structure" class="text-gray-400 hover:text-white transition text-sm md:text-base">Governance Structure</a></li>
+              <li><a href="#assembly" class="text-gray-400 hover:text-white transition text-sm md:text-base">Caucus Assembly</a></li>
+              <li><a href="#committees" class="text-gray-400 hover:text-white transition text-sm md:text-base">Committees</a></li>
+              <li><a href="#journey" class="text-gray-400 hover:text-white transition text-sm md:text-base">Leadership Journey</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-lg md:text-xl font-bold mb-6 md:mb-8">Contact Leadership</h4>
+            <ul class="space-y-3 md:space-y-4">
+              <li class="text-gray-400 text-sm md:text-base">Esit Eket LGA, Akwa Ibom</li>
+              <li class="text-gray-400 text-sm md:text-base">board@itaucdn.com</li>
+              <li class="text-gray-400 text-sm md:text-base">+234 802 327 4698</li>
+              <li class="text-gray-400 text-sm md:text-base">Leadership Office Hours</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="border-t border-gray-800 pt-6 md:pt-8 text-center">
+          <p class="text-gray-500 text-sm md:text-base">
+            &copy; <span id="currentYear"></span> Incorporated Trustee of Akpautong Urua Okok Communities Development Network (ITAUCDN). All rights reserved.
+          </p>
+          <p class="text-gray-500 mt-2 text-xs md:text-sm">
+            A non-profit, non-political community development institution registered under the Companies and Allied Matters Act (CAMA).
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+      
+      // Set current year in footer
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+      
+      // Accordion functionality
+      const accordionHeaders = document.querySelectorAll('.accordion-header');
+      
+      accordionHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+          const content = header.nextElementSibling;
+          const toggle = header.querySelector('.accordion-toggle');
+          
+          // Close other open accordions
+          document.querySelectorAll('.accordion-content').forEach(otherContent => {
+            if (otherContent !== content && otherContent.classList.contains('open')) {
+              otherContent.classList.remove('open');
+              otherContent.previousElementSibling.querySelector('.accordion-toggle').classList.remove('open');
+            }
+          });
+          
+          // Toggle current accordion
+          content.classList.toggle('open');
+          toggle.classList.toggle('open');
+          toggle.textContent = toggle.classList.contains('open') ? '−' : '+';
+        });
+      });
+      
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href === '#') return;
+          
+          e.preventDefault();
+          const targetElement = document.querySelector(href);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+            
+            // Close mobile menu if open
+            mobileMenu.classList.add('hidden');
+            
+            // Update active nav link
+            document.querySelectorAll('.nav-link').forEach(link => {
+              link.classList.remove('active');
+            });
+            this.classList.add('active');
+          }
+        });
+      });
+      
+      // Scroll animations
+      const fadeElements = document.querySelectorAll('.fade-in');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+      });
+      
+      fadeElements.forEach(element => {
+        observer.observe(element);
+      });
+      
+      // Update active nav link on scroll
+      window.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('section[id]');
+        const scrollPosition = window.scrollY + 100;
+        
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          const sectionId = section.getAttribute('id');
+          
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            document.querySelectorAll('.nav-link').forEach(link => {
+              link.classList.remove('active');
+              if (link.getAttribute('href') === `#${sectionId}`) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
+        
+        // Navbar background on scroll
+        const nav = document.querySelector('header');
+        if (window.scrollY > 50) {
+          nav.classList.add('shadow-lg');
+        } else {
+          nav.classList.remove('shadow-lg');
+        }
+      });
+      
+      // Handle responsive table scrolling
+      window.addEventListener('resize', function() {
+        const tableWrappers = document.querySelectorAll('.leadership-table-wrapper');
+        tableWrappers.forEach(wrapper => {
+          if (window.innerWidth < 768) {
+            wrapper.style.overflowX = 'auto';
+          } else {
+            wrapper.style.overflowX = 'visible';
+          }
+        });
+      });
+      
+      // Initialize table responsiveness
+      window.dispatchEvent(new Event('resize'));
+      
+      // Leadership social links functionality
+      document.querySelectorAll('.leader-social a').forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const icon = this.querySelector('i').className;
+          
+          if (icon.includes('envelope')) {
+            alert('This would open your email client to contact this leader.');
+          } else if (icon.includes('phone')) {
+            alert('This would show the leader\'s contact number.');
+          } else if (icon.includes('linkedin')) {
+            alert('This would open the leader\'s LinkedIn profile.');
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
